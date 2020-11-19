@@ -1,19 +1,19 @@
-﻿// Copyright 2010 Geoffrey 'Phogue' Green
-// 
+// Copyright 2010 Geoffrey 'Phogue' Green
+//
 // http://www.phogue.net
-//  
+//
 // This file is part of PRoCon Frostbite.
-// 
+//
 // PRoCon Frostbite is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-// 
+//
 // PRoCon Frostbite is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU General Public License
 // along with PRoCon Frostbite.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -114,6 +114,46 @@ namespace PRoCon.Core.Remote
                 {"mapList.insert", DispatchMapListInsertResponse},
 
                 #endregion
+				
+				#region Venice Unleashed
+				
+				{"modList.Add", DispatchModListAddResponse},
+				{"modList.Available", DispatchModListAvailableModsResponse},
+				{"modList.Clear", DispatchModListClearResponse},
+				{"modList.Debug", DispatchModListDebugResponse},
+				{"modList.List", DispatchModListListResponse},
+				{"modList.ReloadExtensions", DispatchModListReloadExtensionsResponse},
+				{"modList.Remove", DispatchModListRemoveResponse},
+				{"modList.Save", DispatchModListSaveResponse},
+				{"modList.ListRunning", DispatchModListListRunningResponse},
+				
+				{"unlockList.add", DispatchUnlockListAddResponse},
+				{"unlockList.clear", DispatchUnlockListClearResponse},
+				{"unlockList.list", DispatchUnlockListListResponse},
+				{"unlockList.remove", DispatchUnlockListRemoveResponse},
+				{"unlockList.set", DispatchUnlockListSetResponse},
+				
+				{"vu.Event", DispatchVuEventResponse},
+				
+				{"player.get", DispatchPlayerGetResponse},
+				
+				{"vu.ColorCorrectionEnabled", DispatchVuColorCorrectionEnabledResponse},
+				{"vu.DesertingAllowed", DispatchVuDesertingAllowedResponse},
+				{"vu.DestructionEnabled", DispatchVuDestructionEnabledResponse},
+				{"vu.FadeInAll", DispatchVuFadeInAllResponse},
+				{"vu.FadeOutAll", DispatchVuFadeOutAllResponse},
+				{"vu.FrequencyMode", DispatchVuFrequencyModeResponse},
+				{"vu.HighPerformanceReplication", DispatchVuHighPerformanceReplicationResponse},
+				{"vu.SetTeamTicketCount", DispatchVuSetTeamTicketCountResponse},
+				{"vu.ServerBanner", DispatchVuServerBannerResponse},
+				{"vu.SpectatorCount", DispatchVuSpectatorCountResponse},
+				{"vu.SquadSize", DispatchVuSquadSizeResponse},
+				{"vu.SunFlareEnabled", DispatchVuSunFlareEnabledResponse},
+				{"vu.SuppressionMultiplier", DispatchVuSuppressionMultiplierResponse},
+				{"vu.TimeScale", DispatchVuTimeScaleResponse},
+				{"vu.VehicleDisablingEnabled", DispatchVuVehicleDisablingEnabledResponse},
+				
+				#endregion
 
                 // Details
                 {"vars.serverName", DispatchVarsServerNameResponse},
@@ -130,7 +170,7 @@ namespace PRoCon.Core.Remote
                 {"vars.maxPlayerLimit", DispatchVarsMaxPlayerLimitResponse},
                 {"vars.idleTimeout", DispatchVarsIdleTimeoutResponse},
                 {"vars.profanityFilter", DispatchVarsProfanityFilterResponse},
-                
+
                 // Gameplay
                 {"vars.friendlyFire", DispatchVarsFriendlyFireResponse},
                 {"vars.hardCore", DispatchVarsHardCoreResponse},
@@ -178,6 +218,62 @@ namespace PRoCon.Core.Remote
                 {"server.onRoundOverPlayers", DispatchServerOnRoundOverPlayersRequest},
                 {"server.onRoundOverTeamScores", DispatchServerOnRoundOverTeamScoresRequest},
                 {"punkBuster.onMessage", DispatchPunkBusterOnMessageRequest},
+
+                #region Venice Unleashed	
+                {"player.onCoopRevive", DispatchPlayerOnCoopReviveRequest},
+				{"capturePoint.onCapture", DispatchCapturePointOnCapturedRequest},
+				{"capturePoint.onLost", DispatchCapturePointOnLostRequest},
+				{"engine.onInit", DispatchEngineOnInitRequest},
+				{"vu.onLevelLoaded", DispatchServerOnLevelLoadedVURequest},
+				{"vu.onAuthenticated", DispatchPlayerOnAuthenticatedVURequest},
+				{"player.onChangingWeapon", DispatchPlayerOnChangingWeaponRequest},
+				{"vu.onChat", DispatchPlayerOnChatVURequest},
+				{"player.onCreated", DispatchPlayerOnCreatedRequest},
+				{"player.onDestroyed", DispatchPlayerOnDestroyedRequest},
+				{"player.onEnteredCapturePoint", DispatchPlayerOnEnteredCapturePointRequest},
+				{"player.onInstantSuicide", DispatchPlayerOnInstantSuicideRequest},
+				{"player.onJoining", DispatchPlayerOnJoiningRequest},
+				{"player.onKickedFromSquad", DispatchPlayerOnKickedFromSquadRequest},
+				{"player.onKilled", DispatchPlayerOnKilledRequest},
+				{"player.onKitPickup", DispatchPlayerOnKitPickupRequest},
+				{"player.onLeft", DispatchPlayerOnLeftRequest},
+				{"player.onReload", DispatchPlayerOnReloadRequest},
+				{"player.onRespawn", DispatchPlayerOnRespawnRequest},
+				{"player.onResupply", DispatchPlayerOnResupplyRequest},
+				{"player.onReviveAccepted", DispatchPlayerOnReviveAcceptedRequest},
+				{"player.onReviveRefused", DispatchPlayerOnReviveRefusedRequest},
+				{"player.onSetSquad", DispatchPlayerOnSetSquadRequest},
+				{"player.onSetSquadLeader", DispatchPlayerOnSetSquadLeaderRequest},
+				{"player.onSpawnAtVehicle", DispatchPlayerOnSpawnAtVehicleRequest},
+				{"player.onSpawnOnPlayer", DispatchPlayerOnSpawnOnPlayerRequest},
+				{"player.onSpawnOnSelectedSpawnPoint", DispatchPlayerOnSpawnOnSelectedSpawnPointRequest},
+				{"vu.onSquadChange", DispatchPlayerOnSquadChangeVURequest},
+				{"player.onSuppressedEnemy", DispatchPlayerOnSuppressedEnemyRequest},
+				{"vu.onTeamChange", DispatchPlayerOnTeamChangeVURequest},
+				{"player.onUpdate", DispatchPlayerOnUpdateRequest},
+				{"player.onUpdateInput", DispatchPlayerOnUpdateInputRequest},
+				{"vu.onRoundOver", DispatchServerOnRoundOverVURequest},
+				{"server.onRoundReset", DispatchServerOnRoundResetRequest},
+				{"soldier.onHealthAction", DispatchSoldierOnHealthActionRequest},
+				{"soldier.onManDown", DispatchSoldierOnManDownRequest},
+				{"soldier.onPrePhysicsUpdate", DispatchSoldierOnPrePhysicsUpdateRequest},
+				{"vehicle.onDamage", DispatchVehicleOnDamageRequest},
+				{"vehicle.onDestroyed", DispatchVehicleOnDestroyedRequest},
+				{"vehicle.onDisabled", DispatchVehicleOnDisabledRequest},
+				{"vehicle.onEnter", DispatchVehicleOnEnterRequest},
+				{"vehicle.onExit", DispatchVehicleOnExitRequest},
+				{"vehicle.onSpawnDone", DispatchVehicleOnSpawnDoneRequest},
+				{"vehicle.onUnspawn", DispatchVehicleOnUnspawnRequest},
+				
+				{"entityFactory.onCreate", DispatchEntityFactoryOnCreateRequest},
+				{"entityFactory.onCreateFromBlueprint", DispatchEntityFactoryOnCreateFromBlueprintRequest},
+				{"player.onFindBestSquad", DispatchPlayerOnFindBestSquadRequest},
+				{"player.onRequestJoin", DispatchPlayerOnRequestJoinRequest},
+				{"player.onSelectTeam", DispatchPlayerOnSelectTeamRequest},
+				{"server.onSuppressEnemies", DispatchServerOnSuppressEnemiesRequest},
+				{"soldier.onDamage", DispatchSoldierOnDamageRequest},
+
+                #endregion
             };
 
             GetPacketsPattern = new Regex(@"^punkBuster\.pb_sv_command|^version|^help|^serverInfo|^admin\.listPlayers|^listPlayers|^admin\.supportMaps|^admin\.getPlaylists|^admin\.currentLevel|^mapList\.nextLevelIndex|^mapList\.list|^textChatModerationList\.list|^banList\.list|^levelVars\.list|^levelVars\.evaluate|^levelVars\.get|^vars\.[a-zA-Z]*?$");
@@ -479,6 +575,226 @@ namespace PRoCon.Core.Remote
         }
 
         #endregion
+
+		#region Venice Unleashed
+		
+		public virtual void SendModListAddPacket(string strModList)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("modList.Add", strModList);
+            }
+        }
+		
+		public virtual void SendModListAvailableModsPacket()
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("modList.AvailableMods");
+            }
+        }
+		
+		public virtual void SendModListClearPacket()
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("modList.Clear");
+            }
+        }
+		
+		public virtual void SendModListDebugPacket(bool enabled)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("modList.Debug", enabled.ToString());
+            }
+        }
+		
+		public virtual void SendModListListPacket()
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("modList.List");
+            }
+        }
+		
+		public virtual void SendModListReloadExtensionsPacket()
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("modList.ReloadExtensions");
+            }
+        }
+		
+		public virtual void SendModListRemovePacket(string strModList)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("modList.Remove", strModList);
+            }
+        }
+		
+		public virtual void SendModListSavePacket()
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("modList.Save");
+            }
+        }
+		
+		public virtual void SendModListListRunningPacket()
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("modList.ListRunning");
+            }
+        }
+		
+		public virtual void SendUnlockListSetPacket()
+        {
+            if (IsLoggedIn == true)
+            {
+				BuildSendPacket("unlockList.set");
+            }
+        }
+		
+		public virtual void SendVuEventPacket(string strEventName, bool enabled)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.Event", strEventName, enabled.ToString());
+            }
+        }
+		
+		public virtual void SendPlayerGetPacket(string strPlayerName)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("player.get", strPlayerName);
+            }
+        }
+		
+		public virtual void SendVuColorCorrectionEnabledPacket(bool enabled)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.ColorCorrectionEnabled", enabled.ToString());
+            }
+        }
+		
+		public virtual void SendVuDesertingAllowedPacket(bool allowed)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.DesertingAllowed", allowed.ToString());
+            }
+        }
+		
+		public virtual void SendVuDestructionEnabledPacket(bool enabled)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.DestructionEnabled", enabled.ToString());
+            }
+        }
+		
+		public virtual void SendVuFadeInAllPacket()
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.FadeInAll");
+            }
+        }
+		
+		public virtual void SendVuFadeOutAllPacket()
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.FadeOutAll");
+            }
+        }
+		
+		public virtual void SendVuFrequencyModePacket()
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.FrequencyMode");
+            }
+        }
+		
+		public virtual void SendVuHighPerformanceReplicationPacket(bool enabled)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.HighPerformanceReplication", enabled.ToString());
+            }
+        }
+		
+		public virtual void SendVuSetTeamTicketCountPacket(int teamId, int ticketCount)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.SetTeamTicketCount", teamId.ToString(), ticketCount.ToString());
+            }
+        }
+		
+		public virtual void SendVuServerBannerPacket(string strBannerURL)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.ServerBanner", strBannerURL);
+            }
+        }
+		
+		public virtual void SendVuSpectatorCountPacket()
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.SpectatorCount");
+            }
+        }
+		
+		public virtual void SendVuSquadSizePacket(int squadSize)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.SquadSize", squadSize.ToString());
+            }
+        }
+		
+		public virtual void SendVuSunFlareEnabledPacket(bool enabled)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.SunFlareEnabled", enabled.ToString());
+            }
+        }
+		
+		public virtual void SendVuSuppressionMultiplierPacket(int suppressionMultiplier)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.SuppressionMultiplier", suppressionMultiplier.ToString());
+            }
+        }
+		
+		public virtual void SendVuTimeScalePacket(float timeScale)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.TimeScale", timeScale.ToString());
+            }
+        }
+		
+		public virtual void SendVuVehicleDisablingEnabledPacket(bool enabled)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("vu.VehicleDisablingEnabled", enabled.ToString());
+            }
+        }
+		
+		#endregion
 
         #region Ban List
 
@@ -2589,6 +2905,101 @@ namespace PRoCon.Core.Remote
 
         #endregion
 
+        #region Delegates Venice Unleashed
+		
+		public delegate void ModListAddHandler(FrostbiteClient sender, string strModName);
+		public delegate void ModListAvailableModsHandler(FrostbiteClient sender, List<string> lstAvailableMods);
+		public delegate void ModListClearHandler(FrostbiteClient sender);
+		public delegate void ModListDebugHandler(FrostbiteClient sender, bool enabled);
+		public delegate void ModListListHandler(FrostbiteClient sender, List<string> lstModlist);
+		public delegate void ModListReloadExtensionsHandler(FrostbiteClient sender);
+		public delegate void ModListRemoveHandler(FrostbiteClient sender, string strModName);
+		public delegate void ModListSaveHandler(FrostbiteClient sender);
+		public delegate void ModListListRunningHandler(FrostbiteClient sender, List<string> lstModlistRunning);
+		public delegate void PlayerIsDeadHandler(FrostbiteClient sender, string soldierName, bool isDead);
+        public delegate void PlayerIsRevivableHandler(FrostbiteClient sender, string soldierName, bool isRevivable);
+		
+		public delegate void UnlockListAddHandler(FrostbiteClient sender, string strUnlockListAdd);
+		public delegate void UnlockListClearHandler(FrostbiteClient sender);
+		public delegate void UnlockListListHandler(FrostbiteClient sender, List<string> lstUnlocklist);
+		public delegate void UnlockListRemoveHandler(FrostbiteClient sender, string strUnlockListRemove);
+		public delegate void UnlockListSetHandler(FrostbiteClient sender, List<string> lstUnlocklistSet);
+		
+		public delegate void VuEventHandler(FrostbiteClient sender, string strEventName, bool enabled);
+		
+		public delegate void PlayerGetHandler(FrostbiteClient sender, string strPlayerName, int playerId, int playerOnlineId, string strPlayerGuid, string strAccoutGuid, string strPlayerIp, int ping, bool isAlive, bool isSquadLeader, bool isSquadPrivate, bool hasSoldier, int teamId, int squadId, bool isAllowedToSpawn, int score, int kills, int deaths, string strPrimaryWeapon, string strOptic, string strPrimaryAccessory, string strSecondaryAccessory, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife, string strSpecialization, float position_x, float position_y, float position_z, float health, bool isDead);
+		
+		public delegate void ColorCorrectionEnabledHandler(FrostbiteClient sender, bool enabled);
+		public delegate void DesertingAllowedHandler(FrostbiteClient sender, bool allowed);
+		public delegate void DestructionEnabledHandler(FrostbiteClient sender, bool enabled);
+		public delegate void FadeInAllHandler(FrostbiteClient sender);
+		public delegate void FadeOutAllHandler(FrostbiteClient sender);
+		public delegate void FrequencyModeHandler(FrostbiteClient sender, string strFrequencyMode);
+		public delegate void HighPerformanceReplicationHandler(FrostbiteClient sender, bool enabled);
+		public delegate void SetTeamTicketCountHandler(FrostbiteClient sender, int teamId, int ticketCount);
+		public delegate void ServerBannerHandler(FrostbiteClient sender, string strBannerURL);
+		public delegate void SpectatorCountHandler(FrostbiteClient sender, int spectatorCount);
+		public delegate void SquadSizeHandler(FrostbiteClient sender, int squadSize);
+		public delegate void SunFlareEnabledHandler(FrostbiteClient sender, bool enabled);
+		public delegate void SuppressionMultiplierHandler(FrostbiteClient sender, int suppressionMultiplier);
+		public delegate void TimeScaleHandler(FrostbiteClient sender, float timeScale);
+		public delegate void VehicleDisablingEnabledHandler(FrostbiteClient sender, bool enabled);
+
+        public delegate void PlayerCoopReviveHandler(FrostbiteClient sender, string strPlayer, string strReviver, bool isAdrenalineRevive);
+		public delegate void CapturePointCapturedHandler(FrostbiteClient sender, string strCaptureFlag, int teamId);
+		public delegate void CapturePointLostHandler(FrostbiteClient sender, string strCaptureFlag, int teamId);
+		public delegate void EngineInitHandler(FrostbiteClient sender);
+		public delegate void LevelLoadedVUHandler(FrostbiteClient sender, string strLevelName, string strGameMode, int round, int roundsPerMap);
+		public delegate void PlayerAuthenticatedVUHandler(FrostbiteClient sender, string strPlayerName, string strGuid, string strAccoutGuid, string strIpAddress);
+		public delegate void PlayerChangingWeaponHandler(FrostbiteClient sender, string strPlayerName, int teamId, string strWeaponName);
+		public delegate void PlayerChatVUHandler(FrostbiteClient sender, string strPlayerName, string strRecipientMask, int teamId, int squadId, string strMessage);
+		public delegate void PlayerCreatedHandler(FrostbiteClient sender, string strPlayerName);
+		public delegate void PlayerDestroyedHandler(FrostbiteClient sender, string strPlayerName);
+		public delegate void PlayerEnteredCapturePointHandler(FrostbiteClient sender, string strPlayerName, int teamId, string strCapturePoint);
+		public delegate void PlayerInstantSuicideHandler(FrostbiteClient sender, string strPlayerName, int teamId);
+		public delegate void PlayerJoiningHandler(FrostbiteClient sender, string strPlayerName, string strPlayerGuid, string strIpAddress, string strAccoutGuid);
+		public delegate void PlayerKickedFromSquadHandler(FrostbiteClient sender, string strPlayerName, int teamId, int squadId, string strSquadKicker);
+		public delegate void PlayerKilledVUHandler(FrostbiteClient sender, string strPlayerName, string strKiller, float victimPosition_x, float victimPosition_y, float victimPosition_z, string strWeaponName, bool isRoadKill, bool isHeadShot, bool wasVictimInReviveState, float killerPosition_x, float killerPosition_y, float killerPosition_z);
+		public delegate void PlayerKitPickupHandler(FrostbiteClient sender, string strPlayerName, int teamId, string strPrimaryWeapon, string strOptic, string strPrimaryAccessory, string strSecondaryAccessory, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife);
+		public delegate void PlayerLeftVUHandler(FrostbiteClient sender, string strPlayerName, int teamId);
+		public delegate void PlayerReloadHandler(FrostbiteClient sender, string strPlayerName, string strWeaponName, float position_x, float position_y, float position_z);
+		public delegate void PlayerRespawnHandler(FrostbiteClient sender, string strPlayerName, int teamId, string strPrimaryWeapon, string strOptic, string strPrimaryAccessory, string strSecondaryAccessory, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife, string strSpecialization, float position_x, float position_y, float position_z);
+		public delegate void PlayerResupplyHandler(FrostbiteClient sender, string strPlayerName, int givenMagsCount, string strSupplierName);
+		public delegate void PlayerReviveAcceptedHandler(FrostbiteClient sender, string strPlayerName, string strReviverName);
+		public delegate void PlayerReviveRefusedHandler(FrostbiteClient sender, string strPlayerName, int teamId);
+		public delegate void PlayerSetSquadHandler(FrostbiteClient sender, string strPlayerName, int teamId, int squadId);
+		public delegate void PlayerSetSquadLeaderHandler(FrostbiteClient sender, string strPlayerName, int teamId, int squadId);
+		public delegate void PlayerSpawnAtVehicleHandler(FrostbiteClient sender, string strPlayerName, string strVehicleName);
+		public delegate void PlayerSpawnOnPlayerHandler(FrostbiteClient sender, string strPlayerName, string strPlayerToSpawnOn, int teamId, int squadId);
+		public delegate void PlayerSpawnOnSelectedSpawnPointHandler(FrostbiteClient sender, string strPlayerName, int teamId, float position_x, float position_y, float position_z);
+		public delegate void PlayerSquadChangeVUHandler(FrostbiteClient sender, string strPlayerName, int teamId, int squadId);
+		public delegate void PlayerSuppressedEnemyHandler(FrostbiteClient sender, string strPlayerName, string strEnemyName);
+		public delegate void PlayerTeamChangeVUHandler(FrostbiteClient sender, string strPlayerName, int teamId, int squadId);
+		public delegate void PlayerUpdateHandler(FrostbiteClient sender, string strPlayerName, int playerId, int playerOnlineId, string strPlayerGuid, string strAccoutGuid, string strPlayerIp, int ping, bool isAlive, bool isSquadLeader, bool isSquadPrivate, bool hasSoldier, int teamId, int squadId, bool isAllowedToSpawn, int score, int kills, int deaths, string strPrimaryWeapon, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife, float position_x, float position_y, float position_z, float health, bool isDead, float deltaTime);
+		public delegate void PlayerUpdateInputHandler(FrostbiteClient sender, string strPlayerName, float deltaTime);
+		public delegate void ServerRoundOverVUHandler(FrostbiteClient sender, float rountTime, int winningTeamId);
+		public delegate void ServerRoundResetHandler(FrostbiteClient sender);
+		public delegate void SoldierHealthActionHandler(FrostbiteClient sender, string strPlayerName, int action);
+		public delegate void SoldierManDownHandler(FrostbiteClient sender, string strSoldierName, string strInflictorName);
+		public delegate void SoldierPrePhysicsUpdateHandler(FrostbiteClient sender, string strPlayerName, float deltaTime);
+		public delegate void VehicleDamageHandler(FrostbiteClient sender, string strVehicleName, double damage, string strDamageGiver);
+		public delegate void VehicleDestroyedHandler(FrostbiteClient sender, string strVehicleName, int points, int teamId);
+		public delegate void VehicleDisabledHandler(FrostbiteClient sender, string strVehicleName);
+		public delegate void VehicleEnterHandler(FrostbiteClient sender, string strVehicleName, string strPlayerName, int teamId);
+		public delegate void VehicleExitHandler(FrostbiteClient sender, string strVehicleName, string strPlayerName);
+		public delegate void VehicleSpawnDoneHandler(FrostbiteClient sender, string strVehicleName);
+		public delegate void VehicleUnspawnHandler(FrostbiteClient sender, string strVehicleName);
+		
+		public delegate void EntityFactoryCreateHandler(FrostbiteClient sender);
+		public delegate void EntityFactoryCreateFromBlueprintHandler(FrostbiteClient sender);
+		public delegate void PlayerFindBestSquadHandler(FrostbiteClient sender, string strPlayerName);
+		public delegate void PlayerRequestJoinHandler(FrostbiteClient sender, string strJoinMode, string strAccoutGuid, string strPlayerGuid, string strPlayerName);
+		public delegate void PlayerSelectTeamHandler(FrostbiteClient sender, string strPlayerName, int teamId);
+		public delegate void ServerSuppressEnemiesHandler(FrostbiteClient sender, float suppressModifier);
+		public delegate void SoldierDamageHandler(FrostbiteClient sender, string strPlayerName, float damage, string strInflictorName, string strInflictorWeapon);
+		
+	   #endregion
+
         #region Events
 
         public event EmptyParamterHandler Login;
@@ -3620,6 +4031,473 @@ namespace PRoCon.Core.Remote
         }
 
         #endregion
+		
+		#region Venice Unleashed
+		
+		protected virtual void DispatchModListAddResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 2)
+            {
+				if (ModListAdd != null)
+				{
+					this.ModListAdd(this, cpRequestPacket.Words[1]);
+				}
+            }
+        }
+		
+		protected virtual void DispatchModListAvailableModsResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+				cpRecievedPacket.Words.RemoveAt(0);
+                List<string> lstAvailableMods = new List<string>();
+
+                for (int i = 0; i < cpRecievedPacket.Words.Count; i++)
+                {
+					lstAvailableMods.Add(cpRecievedPacket.Words[i]);
+                }
+
+                if (ModListAvailableMods != null)
+                {
+                    this.ModListAvailableMods(this, lstAvailableMods);
+                }
+            }
+        }
+        protected virtual void DispatchModListClearResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (ModListClear != null)
+                {
+                    this.ModListClear(this);
+                }
+            }
+        }
+        protected virtual void DispatchModListDebugResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (ModListDebug != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.ModListDebug(this, bool.Parse(cpRecievedPacket.Words[1]));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.ModListDebug(this, bool.Parse(cpRequestPacket.Words[1]));
+                    }
+                }
+            }
+        }
+		
+		protected virtual void DispatchModListListResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+				cpRecievedPacket.Words.RemoveAt(0);
+                List<string> lstModlist = new List<string>();
+
+                for (int i = 0; i < cpRecievedPacket.Words.Count; i++)
+                {
+					lstModlist.Add(cpRecievedPacket.Words[i]);
+                }
+
+                if (ModListList != null)
+                {
+                    this.ModListList(this, lstModlist);
+                }
+            }
+        }
+		
+		protected virtual void DispatchModListReloadExtensionsResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+				if (ModListReloadExtensions != null)
+				{
+					this.ModListReloadExtensions(this);
+				}
+            }
+        }
+		
+        protected virtual void DispatchModListRemoveResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 2)
+            {
+				if (ModListRemove != null)
+				{
+					this.ModListRemove(this, cpRequestPacket.Words[1]);
+				}
+            }
+        }	
+
+		protected virtual void DispatchModListSaveResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+				if (ModListSave != null)
+				{
+					this.ModListSave(this);
+				}
+            }
+        }
+
+		protected virtual void DispatchModListListRunningResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+             if (cpRequestPacket.Words.Count >= 1)
+            {
+				cpRecievedPacket.Words.RemoveAt(0);
+                List<string> lstModlistRunning = new List<string>();
+
+                for (int i = 0; i < cpRecievedPacket.Words.Count; i++)
+                {
+					lstModlistRunning.Add(cpRecievedPacket.Words[i]);
+                }
+
+                if (ModListListRunning != null)
+                {
+                    this.ModListListRunning(this, lstModlistRunning);
+                }
+            }
+        }
+
+		protected virtual void DispatchUnlockListAddResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 2)
+            {
+				if (UnlockListAdd != null)
+				{
+					this.UnlockListAdd(this, cpRequestPacket.Words[1]);
+				}
+            }
+        }
+
+		protected virtual void DispatchUnlockListClearResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+				if (UnlockListClear != null)
+				{
+					this.UnlockListClear(this);
+				}
+            }
+        }
+
+		protected virtual void DispatchUnlockListListResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+				cpRecievedPacket.Words.RemoveAt(0);
+                List<string> lstUnlocklist = new List<string>();
+
+                for (int i = 0; i < cpRecievedPacket.Words.Count; i++)
+                {
+					lstUnlocklist.Add(cpRecievedPacket.Words[i]);
+                }
+
+                if (UnlockListList != null)
+                {
+                    this.UnlockListList(this, lstUnlocklist);
+                }
+            }
+        }
+
+		protected virtual void DispatchUnlockListRemoveResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 2)
+            {
+				if (UnlockListRemove != null)
+				{
+					this.UnlockListRemove(this, cpRequestPacket.Words[1]);
+				}
+            }
+        }
+
+		protected virtual void DispatchUnlockListSetResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+				cpRequestPacket.Words.RemoveAt(0);
+                List<string> lstUnlocklistSet = new List<string>();
+
+                for (int i = 0; i < cpRequestPacket.Words.Count; i++)
+                {
+					lstUnlocklistSet.Add(cpRequestPacket.Words[i]);
+                }
+
+                if (UnlockListSet != null)
+                {
+                    this.UnlockListSet(this, lstUnlocklistSet);
+                }
+            }
+        }
+
+		protected virtual void DispatchVuEventResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (VuEvent != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.VuEvent(this, cpRequestPacket.Words[1], bool.Parse(cpRecievedPacket.Words[1]));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.VuEvent(this, cpRequestPacket.Words[1], bool.Parse(cpRequestPacket.Words[2]));
+                    }
+                }
+            }
+        }
+		protected virtual void DispatchPlayerGetResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRecievedPacket.Words.Count >= 30)
+			{
+				if (PlayerGet != null)
+				{
+					this.PlayerGet(this, cpRecievedPacket.Words[1], Convert.ToInt32(cpRecievedPacket.Words[2]), Convert.ToInt32(cpRecievedPacket.Words[3]), cpRecievedPacket.Words[4], cpRecievedPacket.Words[5], cpRecievedPacket.Words[6], Convert.ToInt32(cpRecievedPacket.Words[7]), bool.Parse(cpRecievedPacket.Words[8]), bool.Parse(cpRecievedPacket.Words[9]), bool.Parse(cpRecievedPacket.Words[10]), bool.Parse(cpRecievedPacket.Words[11]), Convert.ToInt32(cpRecievedPacket.Words[12]), Convert.ToInt32(cpRecievedPacket.Words[13]), bool.Parse(cpRecievedPacket.Words[14]), Convert.ToInt32(cpRecievedPacket.Words[15]), Convert.ToInt32(cpRecievedPacket.Words[16]), Convert.ToInt32(cpRecievedPacket.Words[17]), cpRecievedPacket.Words[18], cpRecievedPacket.Words[19], cpRecievedPacket.Words[20], cpRecievedPacket.Words[21], cpRecievedPacket.Words[22], cpRecievedPacket.Words[23], cpRecievedPacket.Words[24], cpRecievedPacket.Words[25], cpRecievedPacket.Words[26], cpRecievedPacket.Words[27], float.Parse(cpRecievedPacket.Words[28], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRecievedPacket.Words[29], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRecievedPacket.Words[30], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRecievedPacket.Words[31], CultureInfo.InvariantCulture.NumberFormat), bool.Parse(cpRecievedPacket.Words[32]));
+				}
+			}
+        }
+		
+
+		protected virtual void DispatchVuColorCorrectionEnabledResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (ColorCorrectionEnabled != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.ColorCorrectionEnabled(this, bool.Parse(cpRecievedPacket.Words[1]));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.ColorCorrectionEnabled(this, bool.Parse(cpRequestPacket.Words[1]));
+                    }
+                }
+            }
+        }
+
+		protected virtual void DispatchVuDesertingAllowedResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (DesertingAllowed != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.DesertingAllowed(this, bool.Parse(cpRecievedPacket.Words[1]));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.DesertingAllowed(this, bool.Parse(cpRequestPacket.Words[1]));
+                    }
+                }
+            }
+        }
+
+		protected virtual void DispatchVuDestructionEnabledResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (DestructionEnabled != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.DestructionEnabled(this, bool.Parse(cpRecievedPacket.Words[1]));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.DestructionEnabled(this, bool.Parse(cpRequestPacket.Words[1]));
+                    }
+                }
+            }
+        }
+
+		protected virtual void DispatchVuFadeInAllResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+				if (FadeInAll != null)
+				{
+					this.FadeInAll(this);
+				}
+            }
+        }
+
+		protected virtual void DispatchVuFadeOutAllResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+				if (FadeOutAll != null)
+				{
+					this.FadeOutAll(this);
+				}
+            }
+        }
+
+		protected virtual void DispatchVuFrequencyModeResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRecievedPacket.Words.Count >= 2)
+            {
+				if (FrequencyMode != null)
+				{
+					this.FrequencyMode(this, cpRecievedPacket.Words[1]);
+				}
+            }
+        }
+
+		protected virtual void DispatchVuHighPerformanceReplicationResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (HighPerformanceReplication != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.HighPerformanceReplication(this, bool.Parse(cpRecievedPacket.Words[1]));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.HighPerformanceReplication(this, bool.Parse(cpRequestPacket.Words[1]));
+                    }
+                }
+            }
+        }
+
+		protected virtual void DispatchVuSetTeamTicketCountResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 3)
+            {
+				if (SetTeamTicketCount != null)
+				{
+					this.SetTeamTicketCount(this, Convert.ToInt32(cpRequestPacket.Words[1]), Convert.ToInt32(cpRequestPacket.Words[2]));
+				}
+            }
+        }
+
+		protected virtual void DispatchVuServerBannerResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (ServerBanner != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.ServerBanner(this, cpRecievedPacket.Words[1]);
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.ServerBanner(this, cpRequestPacket.Words[1]);
+                    }
+                }
+            }
+        }
+
+		protected virtual void DispatchVuSpectatorCountResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRecievedPacket.Words.Count >= 2)
+            {
+				if (SpectatorCount != null)
+				{
+					this.SpectatorCount(this, Convert.ToInt32(cpRecievedPacket.Words[1]));
+				}
+            }
+        }
+
+		protected virtual void DispatchVuSquadSizeResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (SquadSize != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.SquadSize(this, Convert.ToInt32(cpRecievedPacket.Words[1]));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.SquadSize(this, Convert.ToInt32(cpRequestPacket.Words[1]));
+                    }
+                }
+            }
+        }
+
+		protected virtual void DispatchVuSunFlareEnabledResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (SunFlareEnabled != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.SunFlareEnabled(this, bool.Parse(cpRecievedPacket.Words[1]));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.SunFlareEnabled(this, bool.Parse(cpRequestPacket.Words[1]));
+                    }
+                }
+            }
+        }
+
+		protected virtual void DispatchVuSuppressionMultiplierResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (SuppressionMultiplier != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.SuppressionMultiplier(this, Convert.ToInt32(cpRecievedPacket.Words[1]));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.SuppressionMultiplier(this, Convert.ToInt32(cpRequestPacket.Words[1]));
+                    }
+                }
+            }
+        }
+
+		protected virtual void DispatchVuTimeScaleResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (TimeScale != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.TimeScale(this, float.Parse(cpRecievedPacket.Words[1], CultureInfo.InvariantCulture.NumberFormat));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.TimeScale(this, float.Parse(cpRequestPacket.Words[1], CultureInfo.InvariantCulture.NumberFormat));
+                    }
+                }
+            }
+        }
+
+		protected virtual void DispatchVuVehicleDisablingEnabledResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+			if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (VehicleDisablingEnabled != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.VehicleDisablingEnabled(this, bool.Parse(cpRecievedPacket.Words[1]));
+                    }
+                    else if (cpRequestPacket.Words.Count >= 2)
+                    {
+                        this.VehicleDisablingEnabled(this, bool.Parse(cpRequestPacket.Words[1]));
+                    }
+                }
+            }
+        }
+		
+		#endregion
 
         #region Vars
 
@@ -4541,6 +5419,572 @@ namespace PRoCon.Core.Remote
 
         #endregion
 
+        #region Venice Unleashed Events
+
+        protected virtual void DispatchPlayerOnCoopReviveRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (PlayerCoopRevive != null)
+              {
+                  bool f_isAdrenalineRevive = bool.Parse(cpRequestPacket.Words[3]);
+                  this.PlayerCoopRevive(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2], f_isAdrenalineRevive);
+              }
+          }
+        }
+		
+		protected virtual void DispatchCapturePointOnCapturedRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (CapturePointCaptured != null)
+              {
+                  this.CapturePointCaptured(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchCapturePointOnLostRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (CapturePointLost != null)
+              {
+                  this.CapturePointLost(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchEngineOnInitRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 1)
+          {
+              if (EngineInit != null)
+              {
+                  this.EngineInit(this);
+              }
+          }
+        }
+		
+		protected virtual void DispatchServerOnLevelLoadedVURequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 5)
+          {
+              if (LevelLoadedVU != null)
+              {
+                  this.LevelLoadedVU(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2], Convert.ToInt32(cpRequestPacket.Words[3]), Convert.ToInt32(cpRequestPacket.Words[4]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnAuthenticatedVURequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 5)
+          {
+              if (PlayerAuthenticatedVU != null)
+              {
+                  this.PlayerAuthenticatedVU(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2], cpRequestPacket.Words[3], cpRequestPacket.Words[4]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnChangingWeaponRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (PlayerChangingWeapon != null)
+              {
+                  this.PlayerChangingWeapon(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), cpRequestPacket.Words[3]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnChatVURequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 6)
+          {
+              if (PlayerChatVU != null)
+              {
+                  this.PlayerChatVU(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2], Convert.ToInt32(cpRequestPacket.Words[3]), Convert.ToInt32(cpRequestPacket.Words[4]), cpRequestPacket.Words[5]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnCreatedRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 2)
+          {
+              if (PlayerCreated != null)
+              {
+                  this.PlayerCreated(this, cpRequestPacket.Words[1]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnDestroyedRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 2)
+          {
+              if (PlayerDestroyed != null)
+              {
+                  this.PlayerDestroyed(this, cpRequestPacket.Words[1]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnEnteredCapturePointRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (PlayerEnteredCapturePoint != null)
+              {
+                  this.PlayerEnteredCapturePoint(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), cpRequestPacket.Words[3]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnInstantSuicideRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (PlayerInstantSuicide != null)
+              {
+                  this.PlayerInstantSuicide(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnJoiningRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 5)
+          {
+              if (PlayerJoining != null)
+              {
+                  this.PlayerJoining(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2], cpRequestPacket.Words[3], cpRequestPacket.Words[4]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnKickedFromSquadRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 5)
+          {
+              if (PlayerKickedFromSquad != null)
+              {
+                  this.PlayerKickedFromSquad(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), Convert.ToInt32(cpRequestPacket.Words[3]), cpRequestPacket.Words[4]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnKilledRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 13)
+          {
+              if (PlayerKilledVU != null)
+              {
+                  this.PlayerKilledVU(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2], float.Parse(cpRequestPacket.Words[3], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[5], CultureInfo.InvariantCulture.NumberFormat), cpRequestPacket.Words[6], bool.Parse(cpRequestPacket.Words[7]), bool.Parse(cpRequestPacket.Words[8]), bool.Parse(cpRequestPacket.Words[9]), float.Parse(cpRequestPacket.Words[10], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[11], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[12], CultureInfo.InvariantCulture.NumberFormat));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnKitPickupRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 12)
+          {
+              if (PlayerKitPickup != null)
+              {
+                  this.PlayerKitPickup(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), cpRequestPacket.Words[3], cpRequestPacket.Words[4], cpRequestPacket.Words[5], cpRequestPacket.Words[6], cpRequestPacket.Words[7], cpRequestPacket.Words[8], cpRequestPacket.Words[9], cpRequestPacket.Words[10], cpRequestPacket.Words[11]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnLeftRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (PlayerLeftVU != null)
+              {
+                  this.PlayerLeftVU(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnReloadRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 6)
+          {
+              if (PlayerReload != null)
+              {
+                  this.PlayerReload(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2], float.Parse(cpRequestPacket.Words[3], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[5], CultureInfo.InvariantCulture.NumberFormat));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnRespawnRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 16)
+          {
+              if (PlayerRespawn != null)
+              {
+                  this.PlayerRespawn(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), cpRequestPacket.Words[3], cpRequestPacket.Words[4], cpRequestPacket.Words[5], cpRequestPacket.Words[6], cpRequestPacket.Words[7], cpRequestPacket.Words[8], cpRequestPacket.Words[9], cpRequestPacket.Words[10], cpRequestPacket.Words[11], cpRequestPacket.Words[12], float.Parse(cpRequestPacket.Words[13], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[14], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[15], CultureInfo.InvariantCulture.NumberFormat));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnResupplyRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (PlayerResupply != null)
+              {
+                  this.PlayerResupply(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), cpRequestPacket.Words[3]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnReviveAcceptedRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (PlayerReviveAccepted != null)
+              {
+                  this.PlayerReviveAccepted(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnReviveRefusedRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (PlayerReviveRefused != null)
+              {
+                  this.PlayerReviveRefused(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnSetSquadRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (PlayerSetSquad != null)
+              {
+                  this.PlayerSetSquad(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), Convert.ToInt32(cpRequestPacket.Words[3]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnSetSquadLeaderRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (PlayerSetSquadLeader != null)
+              {
+                  this.PlayerSetSquadLeader(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), Convert.ToInt32(cpRequestPacket.Words[3]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnSpawnAtVehicleRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (PlayerSpawnAtVehicle != null)
+              {
+                  this.PlayerSpawnAtVehicle(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnSpawnOnPlayerRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 5)
+          {
+              if (PlayerSpawnOnPlayer != null)
+              {
+                  this.PlayerSpawnOnPlayer(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2], Convert.ToInt32(cpRequestPacket.Words[3]), Convert.ToInt32(cpRequestPacket.Words[4]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnSpawnOnSelectedSpawnPointRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 6)
+          {
+              if (PlayerSpawnOnSelectedSpawnPoint != null)
+              {
+                  this.PlayerSpawnOnSelectedSpawnPoint(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), float.Parse(cpRequestPacket.Words[3], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[5], CultureInfo.InvariantCulture.NumberFormat));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnSquadChangeVURequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (PlayerSquadChangeVU != null)
+              {
+                  this.PlayerSquadChangeVU(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), Convert.ToInt32(cpRequestPacket.Words[3]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnSuppressedEnemyRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (PlayerSuppressedEnemy != null)
+              {
+                  this.PlayerSuppressedEnemy(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnTeamChangeVURequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (PlayerTeamChangeVU != null)
+              {
+                  this.PlayerTeamChangeVU(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), Convert.ToInt32(cpRequestPacket.Words[3]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnUpdateRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 30)
+          {
+              if (PlayerUpdate != null)
+              {
+                  this.PlayerUpdate(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), Convert.ToInt32(cpRequestPacket.Words[3]), cpRequestPacket.Words[4], cpRequestPacket.Words[5], cpRequestPacket.Words[6], Convert.ToInt32(cpRequestPacket.Words[7]), bool.Parse(cpRequestPacket.Words[8]), bool.Parse(cpRequestPacket.Words[9]), bool.Parse(cpRequestPacket.Words[10]), bool.Parse(cpRequestPacket.Words[11]), Convert.ToInt32(cpRequestPacket.Words[12]), Convert.ToInt32(cpRequestPacket.Words[13]), bool.Parse(cpRequestPacket.Words[14]), Convert.ToInt32(cpRequestPacket.Words[15]), Convert.ToInt32(cpRequestPacket.Words[16]), Convert.ToInt32(cpRequestPacket.Words[17]), cpRequestPacket.Words[18], cpRequestPacket.Words[19], cpRequestPacket.Words[20], cpRequestPacket.Words[21], cpRequestPacket.Words[22], cpRequestPacket.Words[23], float.Parse(cpRequestPacket.Words[24], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[25], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[26], CultureInfo.InvariantCulture.NumberFormat), float.Parse(cpRequestPacket.Words[27], CultureInfo.InvariantCulture.NumberFormat), bool.Parse(cpRequestPacket.Words[28]), float.Parse(cpRequestPacket.Words[29], CultureInfo.InvariantCulture.NumberFormat));
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnUpdateInputRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (PlayerUpdateInput != null)
+              {
+                  this.PlayerUpdateInput(this, cpRequestPacket.Words[1], float.Parse(cpRequestPacket.Words[2], CultureInfo.InvariantCulture.NumberFormat));
+              }
+          }
+        }
+		
+		protected virtual void DispatchServerOnRoundOverVURequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (ServerRoundOverVU != null)
+              {
+                  this.ServerRoundOverVU(this, float.Parse(cpRequestPacket.Words[1], CultureInfo.InvariantCulture.NumberFormat), Convert.ToInt32(cpRequestPacket.Words[2]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchServerOnRoundResetRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 1)
+          {
+              if (ServerRoundReset != null)
+              {
+                  this.ServerRoundReset(this);
+              }
+          }
+        }
+		
+		protected virtual void DispatchSoldierOnHealthActionRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (SoldierHealthAction != null)
+              {
+                  this.SoldierHealthAction(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchSoldierOnManDownRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (SoldierManDown != null)
+              {
+                  this.SoldierManDown(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchSoldierOnPrePhysicsUpdateRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (SoldierPrePhysicsUpdate != null)
+              {
+                  this.SoldierPrePhysicsUpdate(this, cpRequestPacket.Words[1], float.Parse(cpRequestPacket.Words[2], CultureInfo.InvariantCulture.NumberFormat));
+              }
+          }
+        }
+		
+		protected virtual void DispatchVehicleOnDamageRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (VehicleDamage != null)
+              {
+                  this.VehicleDamage(this, cpRequestPacket.Words[1], double.Parse(cpRequestPacket.Words[2], System.Globalization.CultureInfo.InvariantCulture), cpRequestPacket.Words[3]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchVehicleOnDestroyedRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (VehicleDestroyed != null)
+              {
+                  this.VehicleDestroyed(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]), Convert.ToInt32(cpRequestPacket.Words[3]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchVehicleOnDisabledRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 2)
+          {
+              if (VehicleDisabled != null)
+              {
+                  this.VehicleDisabled(this, cpRequestPacket.Words[1]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchVehicleOnEnterRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 4)
+          {
+              if (VehicleEnter != null)
+              {
+                  this.VehicleEnter(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2], Convert.ToInt32(cpRequestPacket.Words[3]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchVehicleOnExitRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (VehicleExit != null)
+              {
+                  this.VehicleExit(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchVehicleOnSpawnDoneRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 2)
+          {
+              if (VehicleSpawnDone != null)
+              {
+                  this.VehicleSpawnDone(this, cpRequestPacket.Words[1]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchVehicleOnUnspawnRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 2)
+          {
+              if (VehicleUnspawn != null)
+              {
+                  this.VehicleUnspawn(this, cpRequestPacket.Words[1]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchEntityFactoryOnCreateRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 1)
+          {
+              if (EntityFactoryCreate != null)
+              {
+                  this.EntityFactoryCreate(this);
+              }
+          }
+        }
+		
+		protected virtual void DispatchEntityFactoryOnCreateFromBlueprintRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 1)
+          {
+              if (EntityFactoryCreateFromBlueprint != null)
+              {
+                  this.EntityFactoryCreateFromBlueprint(this);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnFindBestSquadRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 2)
+          {
+              if (PlayerFindBestSquad != null)
+              {
+                  this.PlayerFindBestSquad(this, cpRequestPacket.Words[1]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnRequestJoinRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 5)
+          {
+              if (PlayerRequestJoin != null)
+              {
+                  this.PlayerRequestJoin(this, cpRequestPacket.Words[1], cpRequestPacket.Words[2], cpRequestPacket.Words[3], cpRequestPacket.Words[4]);
+              }
+          }
+        }
+		
+		protected virtual void DispatchPlayerOnSelectTeamRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 3)
+          {
+              if (PlayerSelectTeam != null)
+              {
+                  this.PlayerSelectTeam(this, cpRequestPacket.Words[1], Convert.ToInt32(cpRequestPacket.Words[2]));
+              }
+          }
+        }
+		
+		protected virtual void DispatchServerOnSuppressEnemiesRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 2)
+          {
+              if (ServerSuppressEnemies != null)
+              {
+                  this.ServerSuppressEnemies(this, float.Parse(cpRequestPacket.Words[1], CultureInfo.InvariantCulture.NumberFormat));
+              }
+          }
+        }
+		
+		protected virtual void DispatchSoldierOnDamageRequest(FrostbiteConnection sender, Packet cpRequestPacket)
+        {
+          if (cpRequestPacket.Words.Count >= 5)
+          {
+              if (SoldierDamage != null)
+              {
+                  this.SoldierDamage(this, cpRequestPacket.Words[1], float.Parse(cpRequestPacket.Words[2], CultureInfo.InvariantCulture.NumberFormat), cpRequestPacket.Words[3], cpRequestPacket.Words[4]);
+              }
+          }
+        }
+		
+        #endregion
+
         // Events
         public virtual void DispatchRequestPacket(FrostbiteConnection sender, Packet cpRequestPacket)
         {
@@ -4605,6 +6049,63 @@ namespace PRoCon.Core.Remote
         public virtual event RoundOverHandler RoundOver;
         public virtual event RoundOverPlayersHandler RoundOverPlayers;
         public virtual event RoundOverTeamScoresHandler RoundOverTeamScores;
+
+        #endregion
+
+        #region Venice Unleashed
+		
+        public virtual event PlayerCoopReviveHandler PlayerCoopRevive;
+        public virtual event CapturePointCapturedHandler CapturePointCaptured;
+        public virtual event CapturePointLostHandler CapturePointLost;
+        public virtual event EngineInitHandler EngineInit;
+		public virtual event LevelLoadedVUHandler LevelLoadedVU;
+        public virtual event PlayerAuthenticatedVUHandler PlayerAuthenticatedVU;
+        public virtual event PlayerChangingWeaponHandler PlayerChangingWeapon;
+        public virtual event PlayerChatVUHandler PlayerChatVU;
+        public virtual event PlayerCreatedHandler PlayerCreated;
+        public virtual event PlayerDestroyedHandler PlayerDestroyed;
+        public virtual event PlayerEnteredCapturePointHandler PlayerEnteredCapturePoint;
+        public virtual event PlayerInstantSuicideHandler PlayerInstantSuicide;
+        public virtual event PlayerJoiningHandler PlayerJoining;
+        public virtual event PlayerKickedFromSquadHandler PlayerKickedFromSquad;
+        public virtual event PlayerKilledVUHandler PlayerKilledVU;
+        public virtual event PlayerKitPickupHandler PlayerKitPickup;
+        public virtual event PlayerLeftVUHandler PlayerLeftVU;
+        public virtual event PlayerReloadHandler PlayerReload;
+        public virtual event PlayerRespawnHandler PlayerRespawn;
+        public virtual event PlayerResupplyHandler PlayerResupply;
+        public virtual event PlayerReviveAcceptedHandler PlayerReviveAccepted;
+        public virtual event PlayerReviveRefusedHandler PlayerReviveRefused;
+        public virtual event PlayerSetSquadHandler PlayerSetSquad;
+        public virtual event PlayerSetSquadLeaderHandler PlayerSetSquadLeader;
+        public virtual event PlayerSpawnAtVehicleHandler PlayerSpawnAtVehicle;
+        public virtual event PlayerSpawnOnPlayerHandler PlayerSpawnOnPlayer;
+        public virtual event PlayerSpawnOnSelectedSpawnPointHandler PlayerSpawnOnSelectedSpawnPoint;
+        public virtual event PlayerSquadChangeVUHandler PlayerSquadChangeVU;
+        public virtual event PlayerSuppressedEnemyHandler PlayerSuppressedEnemy;
+        public virtual event PlayerTeamChangeVUHandler PlayerTeamChangeVU;
+        public virtual event PlayerUpdateHandler PlayerUpdate;
+        public virtual event PlayerUpdateInputHandler PlayerUpdateInput;
+        public virtual event ServerRoundOverVUHandler ServerRoundOverVU;
+        public virtual event ServerRoundResetHandler ServerRoundReset;
+        public virtual event SoldierHealthActionHandler SoldierHealthAction;
+        public virtual event SoldierManDownHandler SoldierManDown;
+        public virtual event SoldierPrePhysicsUpdateHandler SoldierPrePhysicsUpdate;
+        public virtual event VehicleDamageHandler VehicleDamage;
+        public virtual event VehicleDestroyedHandler VehicleDestroyed;
+        public virtual event VehicleDisabledHandler VehicleDisabled;
+        public virtual event VehicleEnterHandler VehicleEnter;
+        public virtual event VehicleExitHandler VehicleExit;
+        public virtual event VehicleSpawnDoneHandler VehicleSpawnDone;
+        public virtual event VehicleUnspawnHandler VehicleUnspawn;
+		
+        public virtual event EntityFactoryCreateHandler EntityFactoryCreate;
+        public virtual event EntityFactoryCreateFromBlueprintHandler EntityFactoryCreateFromBlueprint;
+        public virtual event PlayerFindBestSquadHandler PlayerFindBestSquad;
+        public virtual event PlayerRequestJoinHandler PlayerRequestJoin;
+        public virtual event PlayerSelectTeamHandler PlayerSelectTeam;
+        public virtual event ServerSuppressEnemiesHandler ServerSuppressEnemies;
+        public virtual event SoldierDamageHandler SoldierDamage;
 
         #endregion
 
@@ -4733,6 +6234,46 @@ namespace PRoCon.Core.Remote
         public virtual event MapListListedHandler MapListListed;
 
         #endregion
+		
+		#region VeniceUnleashed
+
+		public virtual event ModListAddHandler ModListAdd;
+		public virtual event ModListAvailableModsHandler ModListAvailableMods;
+		public virtual event ModListClearHandler ModListClear;
+		public virtual event ModListDebugHandler ModListDebug;
+		public virtual event ModListListHandler ModListList;
+		public virtual event ModListReloadExtensionsHandler ModListReloadExtensions;
+		public virtual event ModListRemoveHandler ModListRemove;
+		public virtual event ModListSaveHandler ModListSave;
+		public virtual event ModListListRunningHandler ModListListRunning;
+		
+		public virtual event UnlockListAddHandler UnlockListAdd;
+		public virtual event UnlockListClearHandler UnlockListClear;
+		public virtual event UnlockListListHandler UnlockListList;
+		public virtual event UnlockListRemoveHandler UnlockListRemove;
+		public virtual event UnlockListSetHandler UnlockListSet;
+		
+		public virtual event VuEventHandler VuEvent;
+		
+		public virtual event PlayerGetHandler PlayerGet;
+		
+		public virtual event ColorCorrectionEnabledHandler ColorCorrectionEnabled;
+		public virtual event DesertingAllowedHandler DesertingAllowed;
+		public virtual event DestructionEnabledHandler DestructionEnabled;
+		public virtual event FadeInAllHandler FadeInAll;
+		public virtual event FadeOutAllHandler FadeOutAll;
+		public virtual event FrequencyModeHandler FrequencyMode;
+		public virtual event HighPerformanceReplicationHandler HighPerformanceReplication;
+		public virtual event SetTeamTicketCountHandler SetTeamTicketCount;
+		public virtual event ServerBannerHandler ServerBanner;
+		public virtual event SpectatorCountHandler SpectatorCount;
+		public virtual event SquadSizeHandler SquadSize;
+		public virtual event SunFlareEnabledHandler SunFlareEnabled;
+		public virtual event SuppressionMultiplierHandler SuppressionMultiplier;
+		public virtual event TimeScaleHandler TimeScale;
+		public virtual event VehicleDisablingEnabledHandler VehicleDisablingEnabled;
+
+		#endregion
 
         #region Variables (fired if setting or getting is successful)
 
@@ -4823,6 +6364,9 @@ namespace PRoCon.Core.Remote
 
         #region player/squad cmd_handler
 
+        public virtual event PlayerIsDeadHandler PlayerIsDead;
+        public virtual event PlayerIsRevivableHandler PlayerIsRevivable;
+		
         public virtual event PlayerIdleStateHandler PlayerIdleState;
         public virtual event PlayerIsAliveHandler PlayerIsAlive;
         public virtual event PlayerPingedByAdminHandler PlayerPingedByAdmin;

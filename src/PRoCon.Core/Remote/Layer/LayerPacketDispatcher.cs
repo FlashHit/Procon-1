@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace PRoCon.Core.Remote.Layer
@@ -26,6 +26,12 @@ namespace PRoCon.Core.Remote.Layer
         public Action<ILayerPacketDispatcher, Packet> RequestPacketAlterBanListRecieved { get; set; }
         public Action<ILayerPacketDispatcher, Packet> RequestPacketAlterReservedSlotsListRecieved { get; set; }
         public Action<ILayerPacketDispatcher, Packet> RequestPacketAlterMaplistRecieved { get; set; }
+
+        #region Venice Unleashed
+
+        public Action<ILayerPacketDispatcher, Packet> RequestPacketAlterModlistRecieved { get; set; }
+
+        #endregion
 
         public Action<ILayerPacketDispatcher, Packet> RequestPacketUseMapFunctionRecieved { get; set; }
 
@@ -128,6 +134,20 @@ namespace PRoCon.Core.Remote.Layer
                 { "mapList.nextLevelIndex", this.DispatchUseMapFunctionRequest },
                 { "mapList.remove", this.DispatchAlterMaplistRequest },
                 { "mapList.insert", this.DispatchAlterMaplistRequest },
+
+                #endregion
+
+                #region Venice Unleashed
+
+                { "modList.Add", this.DispatchAlterModlistRequest },
+                { "modList.AvailableMods", this.DispatchAlterModlistRequest },
+                { "modList.Clear", this.DispatchAlterModlistRequest },
+                { "modList.Debug", this.DispatchAlterModlistRequest },
+                { "modList.List", this.DispatchAlterModlistRequest },
+                { "modList.ReloadExtension", this.DispatchAlterModlistRequest },
+                { "modList.Remove", this.DispatchAlterModlistRequest },
+                { "modList.Save", this.DispatchAlterModlistRequest },
+                { "modList.UnloadExtensions", this.DispatchAlterModlistRequest },
 
                 #endregion
 
@@ -270,6 +290,18 @@ namespace PRoCon.Core.Remote.Layer
                 handler(this, request);
             }
         }
+
+        #region Venice Unleashed
+        protected virtual void DispatchAlterModlistRequest(ILayerConnection sender, Packet request)
+        {
+            var handler = this.RequestPacketAlterModlistRecieved;
+            if (handler != null)
+            {
+                handler(this, request);
+            }
+        }
+
+        #endregion
 
         protected virtual void DispatchVarsAdminPasswordRequest(ILayerConnection sender, Packet request)
         {
@@ -551,6 +583,10 @@ namespace PRoCon.Core.Remote.Layer
             this.RequestPacketAlterReservedSlotsListRecieved = null;
             this.RequestPacketAlterMaplistRecieved = null;
 
+            #region Venice Unleashed
+            this.RequestPacketAlterModlistRecieved = null;
+            #endregion
+
             this.RequestPacketUseMapFunctionRecieved = null;
 
             this.RequestPacketVarsRecieved = null;
@@ -578,6 +614,7 @@ namespace PRoCon.Core.Remote.Layer
 
             this.RequestPacketSquadLeaderRecieved = null;
             this.RequestPacketSquadIsPrivateReceived = null;
+
         }
 
         public void Shutdown()

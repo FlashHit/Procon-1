@@ -1,4 +1,4 @@
-﻿using PRoCon.Core.Remote.Layer.PacketDispatchers;
+using PRoCon.Core.Remote.Layer.PacketDispatchers;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -220,7 +220,10 @@ namespace PRoCon.Core.Remote.Layer
 
                 this.PacketDispatcher.RequestPacketSquadLeaderRecieved = PacketDispatcher_RequestPacketSquadLeaderRecieved;
                 this.PacketDispatcher.RequestPacketSquadIsPrivateReceived = PacketDispatcher_RequestPacketSquadIsPrivateReceived;
-
+				
+				#region Venice Unleashed
+                this.PacketDispatcher.RequestPacketAlterModlistRecieved = PacketDispatcher_RequestPacketAlterMoplistRecieved;
+				#endregion
             }
 
             this.Application.AccountsList.AccountAdded += new AccountDictionary.AccountAlteredHandler(AccountsList_AccountAdded);
@@ -1543,7 +1546,26 @@ namespace PRoCon.Core.Remote.Layer
                 sender.SendResponse(packet, LayerClient.ResponseLoginRequired);
             }
         }
-
+		#region Venice Unleashed
+		private void PacketDispatcher_RequestPacketAlterMoplistRecieved(ILayerPacketDispatcher sender, Packet packet)
+        {
+            if (this.IsLoggedIn == true)
+            {
+                if (this.Privileges.CanEditMapList == true)
+                {
+                    this.Client.SendProconLayerPacket(this, packet);
+                }
+                else
+                {
+                    sender.SendResponse(packet, LayerClient.ResponseInsufficientPrivileges);
+                }
+            }
+            else
+            {
+                sender.SendResponse(packet, LayerClient.ResponseLoginRequired);
+            }
+        }
+		#endregion
         private void PacketDispatcher_RequestPacketAdminPlayerMoveRecieved(ILayerPacketDispatcher sender, Packet packet)
         {
             if (this.IsLoggedIn == true)
@@ -1763,7 +1785,7 @@ namespace PRoCon.Core.Remote.Layer
 
 
         #endregion
-
+		
         #region Accounts
 
 

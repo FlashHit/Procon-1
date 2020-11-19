@@ -1,4 +1,4 @@
-﻿namespace PRoCon.Core.Remote.Layer.PacketDispatchers
+namespace PRoCon.Core.Remote.Layer.PacketDispatchers
 {
     public class Bf3PacketDispatcher : LayerPacketDispatcher
     {
@@ -68,6 +68,20 @@
             this.RequestDelegates.Add("squad.listActive", this.DispatchSecureSafeListedRequest);
             this.RequestDelegates.Add("squad.listPlayers", this.DispatchSecureSafeListedRequest);
             this.RequestDelegates.Add("squad.private", this.DispatchSquadIsPrivateRequest);
+
+            this.RequestDelegates.Add("player.isDead", this.DispatchSecureSafeListedRequest);
+            this.RequestDelegates.Add("player.isRevivable", this.DispatchSecureSafeListedRequest);
+
+            this.RequestDelegates.Add("modList.Add", this.DispatchAlterModlistRequest);
+            this.RequestDelegates.Add("modList.AvailableMods", this.DispatchAlterModlistRequest);
+            this.RequestDelegates.Add("modList.Clear", this.DispatchAlterModlistRequest);
+            this.RequestDelegates.Add("modList.Debug", this.DispatchAlterModlistRequest);
+            this.RequestDelegates.Add("modList.List", this.DispatchAlterModlistRequest);
+            this.RequestDelegates.Add("modList.ReloadExtensions", this.DispatchAlterModlistRequest);
+            this.RequestDelegates.Add("modList.Remove", this.DispatchAlterModlistRequest);
+            this.RequestDelegates.Add("modList.Save", this.DispatchAlterModlistRequest);
+            this.RequestDelegates.Add("modList.UnloadExtensions", this.DispatchAlterModlistRequest);
+
         }
     }
 }

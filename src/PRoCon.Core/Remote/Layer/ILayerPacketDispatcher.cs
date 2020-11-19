@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace PRoCon.Core.Remote.Layer
@@ -22,6 +22,13 @@ namespace PRoCon.Core.Remote.Layer
         Action<ILayerPacketDispatcher, Packet> RequestPacketAlterBanListRecieved { get; set; }
         Action<ILayerPacketDispatcher, Packet> RequestPacketAlterReservedSlotsListRecieved { get; set; }
         Action<ILayerPacketDispatcher, Packet> RequestPacketAlterMaplistRecieved { get; set; }
+        
+        #region Venice Unleashed
+        
+        Action<ILayerPacketDispatcher, Packet> RequestPacketAlterModlistRecieved { get; set; }
+
+        #endregion
+
         Action<ILayerPacketDispatcher, Packet> RequestPacketUseMapFunctionRecieved { get; set; }
         Action<ILayerPacketDispatcher, Packet> RequestPacketVarsRecieved { get; set; }
         Action<ILayerPacketDispatcher, Packet> RequestPacketAdminShutdown { get; set; }

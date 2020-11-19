@@ -1,4 +1,4 @@
-﻿using PRoCon.Core.Maps;
+using PRoCon.Core.Maps;
 using PRoCon.Core.Players;
 using System;
 using System.Collections.Generic;
@@ -118,6 +118,9 @@ namespace PRoCon.Core.Remote
             #endregion
 
             #region player.* / squad.* commands
+			
+            ResponseDelegates.Add("player.isDead", DispatchPlayerIsDeadResponse);
+            ResponseDelegates.Add("player.isRevivable", DispatchPlayerIsRevivableResponse);
 
             ResponseDelegates.Add("player.idleDuration", DispatchPlayerIdleDurationResponse);
             ResponseDelegates.Add("player.isAlive", DispatchPlayerIsAliveResponse);
@@ -132,7 +135,7 @@ namespace PRoCon.Core.Remote
 
             ResponseDelegates.Add("admin.help", DispatchHelpResponse);
 
-            GetPacketsPattern = new Regex(GetPacketsPattern + @"|^reservedSlotsList.list|^player\.idleDuration|^player\.isAlive|^player.ping|squad\.listActive|^squad\.listPlayers|^squad\.private", RegexOptions.Compiled);
+            GetPacketsPattern = new Regex(GetPacketsPattern + @"|^reservedSlotsList.list|^player\.idleDuration|^player\.isAlive|^player\.isDead|^player\.isRevivable|^player.ping|squad\.listActive|^squad\.listPlayers|^squad\.private", RegexOptions.Compiled);
         }
 
         public override string GameType
@@ -287,6 +290,8 @@ namespace PRoCon.Core.Remote
         public override event IsEnabledHandler PremiumStatus;
 
         #region player/squad cmd_handler
+        public override event PlayerIsDeadHandler PlayerIsDead;
+        public override event PlayerIsRevivableHandler PlayerIsRevivable;
 
         public override event PlayerIdleStateHandler PlayerIdleState;
         public override event PlayerIsAliveHandler PlayerIsAlive;
@@ -633,7 +638,22 @@ namespace PRoCon.Core.Remote
                 BuildSendPacket("player.isAlive", soldierName);
             }
         }
-
+		
+		public virtual void SendPlayerIsDeadPacket(string soldierName)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("player.isDead", soldierName);
+            }
+        }
+		
+		public virtual void SendPlayerIsRevivablePacket(string soldierName)
+        {
+            if (IsLoggedIn == true)
+            {
+                BuildSendPacket("player.isRevivable", soldierName);
+            }
+        }
 
         public virtual void SendPlayerPingPacket(string soldierName)
         {
@@ -1613,6 +1633,34 @@ namespace PRoCon.Core.Remote
                     if (cpRecievedPacket.Words.Count == 2)
                     {
                         this.PlayerIsAlive(this, cpRequestPacket.Words[1], Convert.ToBoolean(cpRecievedPacket.Words[1]));
+                    }
+                }
+            }
+        }
+		
+		protected virtual void DispatchPlayerIsDeadResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (PlayerIsDead != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.PlayerIsDead(this, cpRequestPacket.Words[1], Convert.ToBoolean(cpRecievedPacket.Words[1]));
+                    }
+                }
+            }
+        }
+		
+		protected virtual void DispatchPlayerIsRevivableResponse(FrostbiteConnection sender, Packet cpRecievedPacket, Packet cpRequestPacket)
+        {
+            if (cpRequestPacket.Words.Count >= 1)
+            {
+                if (PlayerIsRevivable != null)
+                {
+                    if (cpRecievedPacket.Words.Count == 2)
+                    {
+                        this.PlayerIsRevivable(this, cpRequestPacket.Words[1], Convert.ToBoolean(cpRecievedPacket.Words[1]));
                     }
                 }
             }
