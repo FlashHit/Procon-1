@@ -1296,6 +1296,101 @@ namespace PRoCon.Core.Plugin
             ProconClient.Game.RoundStartReadyPlayersNeeded -= Game_RoundStartReadyPlayersNeeded;
 
             #endregion
+
+            #region Venice Unleashed
+
+            ProconClient.Game.PlayerCoopRevive -= new FrostbiteClient.PlayerCoopReviveHandler(m_prcClient_PlayerCoopRevive);
+			ProconClient.Game.CapturePointCaptured -= new FrostbiteClient.CapturePointCapturedHandler(m_prcClient_CapturePointCaptured);
+			ProconClient.Game.CapturePointLost -= new FrostbiteClient.CapturePointLostHandler(m_prcClient_CapturePointLost);
+			ProconClient.Game.EngineInit -= new FrostbiteClient.EngineInitHandler(m_prcClient_EngineInit);
+			ProconClient.Game.LevelLoadedVU -= new FrostbiteClient.LevelLoadedVUHandler(m_prcClient_LevelLoadedVU);
+			ProconClient.Game.PlayerAuthenticatedVU -= new FrostbiteClient.PlayerAuthenticatedVUHandler(m_prcClient_PlayerAuthenticatedVU);
+			ProconClient.Game.PlayerChangingWeapon -= new FrostbiteClient.PlayerChangingWeaponHandler(m_prcClient_PlayerChangingWeapon);
+			ProconClient.Game.PlayerChatVU -= new FrostbiteClient.PlayerChatVUHandler(m_prcClient_PlayerChatVU);
+			ProconClient.Game.PlayerCreated -= new FrostbiteClient.PlayerCreatedHandler(m_prcClient_PlayerCreated);
+			ProconClient.Game.PlayerDestroyed -= new FrostbiteClient.PlayerDestroyedHandler(m_prcClient_PlayerDestroyed);
+			ProconClient.Game.PlayerEnteredCapturePoint -= new FrostbiteClient.PlayerEnteredCapturePointHandler(m_prcClient_PlayerEnteredCapturePoint);
+			ProconClient.Game.PlayerInstantSuicide -= new FrostbiteClient.PlayerInstantSuicideHandler(m_prcClient_PlayerInstantSuicide);
+			ProconClient.Game.PlayerJoining -= new FrostbiteClient.PlayerJoiningHandler(m_prcClient_PlayerJoining);
+			ProconClient.Game.PlayerKickedFromSquad -= new FrostbiteClient.PlayerKickedFromSquadHandler(m_prcClient_PlayerKickedFromSquad);
+			ProconClient.Game.PlayerKilledVU -= new FrostbiteClient.PlayerKilledVUHandler(m_prcClient_PlayerKilledVU);
+			ProconClient.Game.PlayerKitPickup -= new FrostbiteClient.PlayerKitPickupHandler(m_prcClient_PlayerKitPickup);
+			ProconClient.Game.PlayerLeftVU -= new FrostbiteClient.PlayerLeftVUHandler(m_prcClient_PlayerLeftVU);
+			ProconClient.Game.PlayerReload -= new FrostbiteClient.PlayerReloadHandler(m_prcClient_PlayerReload);
+			ProconClient.Game.PlayerRespawn -= new FrostbiteClient.PlayerRespawnHandler(m_prcClient_PlayerRespawn);
+			ProconClient.Game.PlayerResupply -= new FrostbiteClient.PlayerResupplyHandler(m_prcClient_PlayerResupply);
+			ProconClient.Game.PlayerReviveAccepted -= new FrostbiteClient.PlayerReviveAcceptedHandler(m_prcClient_PlayerReviveAccepted);
+			ProconClient.Game.PlayerReviveRefused -= new FrostbiteClient.PlayerReviveRefusedHandler(m_prcClient_PlayerReviveRefused);
+			ProconClient.Game.PlayerSetSquad -= new FrostbiteClient.PlayerSetSquadHandler(m_prcClient_PlayerSetSquad);
+			ProconClient.Game.PlayerSetSquadLeader -= new FrostbiteClient.PlayerSetSquadLeaderHandler(m_prcClient_PlayerSetSquadLeader);
+			ProconClient.Game.PlayerSpawnAtVehicle -= new FrostbiteClient.PlayerSpawnAtVehicleHandler(m_prcClient_PlayerSpawnAtVehicle);
+			ProconClient.Game.PlayerSpawnOnPlayer -= new FrostbiteClient.PlayerSpawnOnPlayerHandler(m_prcClient_PlayerSpawnOnPlayer);
+			ProconClient.Game.PlayerSpawnOnSelectedSpawnPoint -= new FrostbiteClient.PlayerSpawnOnSelectedSpawnPointHandler(m_prcClient_PlayerSpawnOnSelectedSpawnPoint);
+			ProconClient.Game.PlayerSquadChangeVU -= new FrostbiteClient.PlayerSquadChangeVUHandler(m_prcClient_PlayerSquadChangeVU);
+			ProconClient.Game.PlayerSuppressedEnemy -= new FrostbiteClient.PlayerSuppressedEnemyHandler(m_prcClient_PlayerSuppressedEnemy);
+			ProconClient.Game.PlayerTeamChangeVU -= new FrostbiteClient.PlayerTeamChangeVUHandler(m_prcClient_PlayerTeamChangeVU);
+			ProconClient.Game.PlayerUpdate -= new FrostbiteClient.PlayerUpdateHandler(m_prcClient_PlayerUpdate);
+			ProconClient.Game.PlayerUpdateInput -= new FrostbiteClient.PlayerUpdateInputHandler(m_prcClient_PlayerUpdateInput);
+			ProconClient.Game.ServerRoundOverVU -= new FrostbiteClient.ServerRoundOverVUHandler(m_prcClient_ServerRoundOverVU);
+			ProconClient.Game.ServerRoundReset -= new FrostbiteClient.ServerRoundResetHandler(m_prcClient_ServerRoundReset);
+			ProconClient.Game.SoldierHealthAction -= new FrostbiteClient.SoldierHealthActionHandler(m_prcClient_SoldierHealthAction);
+			ProconClient.Game.SoldierManDown -= new FrostbiteClient.SoldierManDownHandler(m_prcClient_SoldierManDown);
+			ProconClient.Game.SoldierPrePhysicsUpdate -= new FrostbiteClient.SoldierPrePhysicsUpdateHandler(m_prcClient_SoldierPrePhysicsUpdate);
+			ProconClient.Game.VehicleDamage -= new FrostbiteClient.VehicleDamageHandler(m_prcClient_VehicleDamage);
+			ProconClient.Game.VehicleDestroyed -= new FrostbiteClient.VehicleDestroyedHandler(m_prcClient_VehicleDestroyed);
+			ProconClient.Game.VehicleDisabled -= new FrostbiteClient.VehicleDisabledHandler(m_prcClient_VehicleDisabled);
+			ProconClient.Game.VehicleEnter -= new FrostbiteClient.VehicleEnterHandler(m_prcClient_VehicleEnter);
+			ProconClient.Game.VehicleExit -= new FrostbiteClient.VehicleExitHandler(m_prcClient_VehicleExit);
+			ProconClient.Game.VehicleSpawnDone -= new FrostbiteClient.VehicleSpawnDoneHandler(m_prcClient_VehicleSpawnDone);
+			ProconClient.Game.VehicleUnspawn -= new FrostbiteClient.VehicleUnspawnHandler(m_prcClient_VehicleUnspawn);
+			
+			ProconClient.Game.EntityFactoryCreate -= new FrostbiteClient.EntityFactoryCreateHandler(m_prcClient_EntityFactoryCreate);
+			ProconClient.Game.EntityFactoryCreateFromBlueprint -= new FrostbiteClient.EntityFactoryCreateFromBlueprintHandler(m_prcClient_EntityFactoryCreateFromBlueprint);
+			ProconClient.Game.PlayerFindBestSquad -= new FrostbiteClient.PlayerFindBestSquadHandler(m_prcClient_PlayerFindBestSquad);
+			ProconClient.Game.PlayerRequestJoin -= new FrostbiteClient.PlayerRequestJoinHandler(m_prcClient_PlayerRequestJoin);
+			ProconClient.Game.PlayerSelectTeam -= new FrostbiteClient.PlayerSelectTeamHandler(m_prcClient_PlayerSelectTeam);
+			ProconClient.Game.ServerSuppressEnemies -= new FrostbiteClient.ServerSuppressEnemiesHandler(m_prcClient_ServerSuppressEnemies);
+			ProconClient.Game.SoldierDamage -= new FrostbiteClient.SoldierDamageHandler(m_prcClient_SoldierDamage);
+			
+			ProconClient.Game.ModListAdd -= new FrostbiteClient.ModListAddHandler(Game_ModListAdd);
+			ProconClient.Game.ModListAvailableMods -= new FrostbiteClient.ModListAvailableModsHandler(Game_ModListAvailableMods);
+			ProconClient.Game.ModListClear -= new FrostbiteClient.ModListClearHandler(Game_ModListClear);
+			ProconClient.Game.ModListDebug -= new FrostbiteClient.ModListDebugHandler(Game_ModListDebug);
+			ProconClient.Game.ModListList -= new FrostbiteClient.ModListListHandler(Game_ModListList);
+			ProconClient.Game.ModListRemove -= new FrostbiteClient.ModListRemoveHandler(Game_ModListRemove);
+			ProconClient.Game.ModListReloadExtensions -= new FrostbiteClient.ModListReloadExtensionsHandler(Game_ModListReloadExtensions);
+			ProconClient.Game.ModListSave -= new FrostbiteClient.ModListSaveHandler(Game_ModListSave);
+			ProconClient.Game.ModListListRunning -= new FrostbiteClient.ModListListRunningHandler(Game_ModListListRunning);
+			ProconClient.Game.PlayerIsDead -= new FrostbiteClient.PlayerIsDeadHandler(Game_PlayerIsDead);
+			ProconClient.Game.PlayerIsRevivable -= new FrostbiteClient.PlayerIsRevivableHandler(Game_PlayerIsRevivable);
+			
+			ProconClient.Game.UnlockListAdd -= new FrostbiteClient.UnlockListAddHandler(Game_UnlockListAdd);
+			ProconClient.Game.UnlockListClear -= new FrostbiteClient.UnlockListClearHandler(Game_UnlockListClear);
+			ProconClient.Game.UnlockListList -= new FrostbiteClient.UnlockListListHandler(Game_UnlockListList);
+			ProconClient.Game.UnlockListRemove -= new FrostbiteClient.UnlockListRemoveHandler(Game_UnlockListRemove);
+			ProconClient.Game.UnlockListSet -= new FrostbiteClient.UnlockListSetHandler(Game_UnlockListSet);
+			
+			ProconClient.Game.VuEvent -= new FrostbiteClient.VuEventHandler(Game_VuEvent);
+			
+			ProconClient.Game.PlayerGet -= new FrostbiteClient.PlayerGetHandler(Game_PlayerGet);
+			
+			ProconClient.Game.ColorCorrectionEnabled -= new FrostbiteClient.ColorCorrectionEnabledHandler(Game_ColorCorrectionEnabled);
+			ProconClient.Game.DesertingAllowed -= new FrostbiteClient.DesertingAllowedHandler(Game_DesertingAllowed);
+			ProconClient.Game.DestructionEnabled -= new FrostbiteClient.DestructionEnabledHandler(Game_DestructionEnabled);
+			ProconClient.Game.FadeInAll -= new FrostbiteClient.FadeInAllHandler(Game_FadeInAll);
+			ProconClient.Game.FadeOutAll -= new FrostbiteClient.FadeOutAllHandler(Game_FadeOutAll);
+			ProconClient.Game.FrequencyMode -= new FrostbiteClient.FrequencyModeHandler(Game_FrequencyMode);
+			ProconClient.Game.HighPerformanceReplication -= new FrostbiteClient.HighPerformanceReplicationHandler(Game_HighPerformanceReplication);
+			ProconClient.Game.SetTeamTicketCount -= new FrostbiteClient.SetTeamTicketCountHandler(Game_SetTeamTicketCount);
+			ProconClient.Game.ServerBanner -= new FrostbiteClient.ServerBannerHandler(Game_ServerBanner);
+			ProconClient.Game.SpectatorCount -= new FrostbiteClient.SpectatorCountHandler(Game_SpectatorCount);
+			ProconClient.Game.SquadSize -= new FrostbiteClient.SquadSizeHandler(Game_SquadSize);
+			ProconClient.Game.SunFlareEnabled -= new FrostbiteClient.SunFlareEnabledHandler(Game_SunFlareEnabled);
+			ProconClient.Game.SuppressionMultiplier -= new FrostbiteClient.SuppressionMultiplierHandler(Game_SuppressionMultiplier);
+			ProconClient.Game.TimeScale -= new FrostbiteClient.TimeScaleHandler(Game_TimeScale);
+			ProconClient.Game.VehicleDisablingEnabled -= new FrostbiteClient.VehicleDisablingEnabledHandler(Game_VehicleDisablingEnabled);
+			
+            #endregion
         }
 
         private void AssignEventHandler()
@@ -1552,6 +1647,100 @@ namespace PRoCon.Core.Plugin
             ProconClient.Game.RoundStartReadyPlayersNeeded += Game_RoundStartReadyPlayersNeeded;
 
             #endregion
+
+            #region Venice Unleashed
+
+			ProconClient.Game.PlayerCoopRevive += new FrostbiteClient.PlayerCoopReviveHandler(m_prcClient_PlayerCoopRevive);
+			ProconClient.Game.CapturePointCaptured += new FrostbiteClient.CapturePointCapturedHandler(m_prcClient_CapturePointCaptured);
+			ProconClient.Game.CapturePointLost += new FrostbiteClient.CapturePointLostHandler(m_prcClient_CapturePointLost);
+			ProconClient.Game.EngineInit += new FrostbiteClient.EngineInitHandler(m_prcClient_EngineInit);
+			ProconClient.Game.LevelLoadedVU += new FrostbiteClient.LevelLoadedVUHandler(m_prcClient_LevelLoadedVU);
+			ProconClient.Game.PlayerAuthenticatedVU += new FrostbiteClient.PlayerAuthenticatedVUHandler(m_prcClient_PlayerAuthenticatedVU);
+			ProconClient.Game.PlayerChangingWeapon += new FrostbiteClient.PlayerChangingWeaponHandler(m_prcClient_PlayerChangingWeapon);
+			ProconClient.Game.PlayerChatVU += new FrostbiteClient.PlayerChatVUHandler(m_prcClient_PlayerChatVU);
+			ProconClient.Game.PlayerCreated += new FrostbiteClient.PlayerCreatedHandler(m_prcClient_PlayerCreated);
+			ProconClient.Game.PlayerDestroyed += new FrostbiteClient.PlayerDestroyedHandler(m_prcClient_PlayerDestroyed);
+			ProconClient.Game.PlayerEnteredCapturePoint += new FrostbiteClient.PlayerEnteredCapturePointHandler(m_prcClient_PlayerEnteredCapturePoint);
+			ProconClient.Game.PlayerInstantSuicide += new FrostbiteClient.PlayerInstantSuicideHandler(m_prcClient_PlayerInstantSuicide);
+			ProconClient.Game.PlayerJoining += new FrostbiteClient.PlayerJoiningHandler(m_prcClient_PlayerJoining);
+			ProconClient.Game.PlayerKickedFromSquad += new FrostbiteClient.PlayerKickedFromSquadHandler(m_prcClient_PlayerKickedFromSquad);
+			ProconClient.Game.PlayerKilledVU += new FrostbiteClient.PlayerKilledVUHandler(m_prcClient_PlayerKilledVU);
+			ProconClient.Game.PlayerKitPickup += new FrostbiteClient.PlayerKitPickupHandler(m_prcClient_PlayerKitPickup);
+			ProconClient.Game.PlayerLeftVU += new FrostbiteClient.PlayerLeftVUHandler(m_prcClient_PlayerLeftVU);
+			ProconClient.Game.PlayerReload += new FrostbiteClient.PlayerReloadHandler(m_prcClient_PlayerReload);
+			ProconClient.Game.PlayerRespawn += new FrostbiteClient.PlayerRespawnHandler(m_prcClient_PlayerRespawn);
+			ProconClient.Game.PlayerResupply += new FrostbiteClient.PlayerResupplyHandler(m_prcClient_PlayerResupply);
+			ProconClient.Game.PlayerReviveAccepted += new FrostbiteClient.PlayerReviveAcceptedHandler(m_prcClient_PlayerReviveAccepted);
+			ProconClient.Game.PlayerReviveRefused += new FrostbiteClient.PlayerReviveRefusedHandler(m_prcClient_PlayerReviveRefused);
+			ProconClient.Game.PlayerSetSquad += new FrostbiteClient.PlayerSetSquadHandler(m_prcClient_PlayerSetSquad);
+			ProconClient.Game.PlayerSetSquadLeader += new FrostbiteClient.PlayerSetSquadLeaderHandler(m_prcClient_PlayerSetSquadLeader);
+			ProconClient.Game.PlayerSpawnAtVehicle += new FrostbiteClient.PlayerSpawnAtVehicleHandler(m_prcClient_PlayerSpawnAtVehicle);
+			ProconClient.Game.PlayerSpawnOnPlayer += new FrostbiteClient.PlayerSpawnOnPlayerHandler(m_prcClient_PlayerSpawnOnPlayer);
+			ProconClient.Game.PlayerSpawnOnSelectedSpawnPoint += new FrostbiteClient.PlayerSpawnOnSelectedSpawnPointHandler(m_prcClient_PlayerSpawnOnSelectedSpawnPoint);
+			ProconClient.Game.PlayerSquadChangeVU += new FrostbiteClient.PlayerSquadChangeVUHandler(m_prcClient_PlayerSquadChangeVU);
+			ProconClient.Game.PlayerSuppressedEnemy += new FrostbiteClient.PlayerSuppressedEnemyHandler(m_prcClient_PlayerSuppressedEnemy);
+			ProconClient.Game.PlayerTeamChangeVU += new FrostbiteClient.PlayerTeamChangeVUHandler(m_prcClient_PlayerTeamChangeVU);
+			ProconClient.Game.PlayerUpdate += new FrostbiteClient.PlayerUpdateHandler(m_prcClient_PlayerUpdate);
+			ProconClient.Game.PlayerUpdateInput += new FrostbiteClient.PlayerUpdateInputHandler(m_prcClient_PlayerUpdateInput);
+			ProconClient.Game.ServerRoundOverVU += new FrostbiteClient.ServerRoundOverVUHandler(m_prcClient_ServerRoundOverVU);
+			ProconClient.Game.ServerRoundReset += new FrostbiteClient.ServerRoundResetHandler(m_prcClient_ServerRoundReset);
+			ProconClient.Game.SoldierHealthAction += new FrostbiteClient.SoldierHealthActionHandler(m_prcClient_SoldierHealthAction);
+			ProconClient.Game.SoldierManDown += new FrostbiteClient.SoldierManDownHandler(m_prcClient_SoldierManDown);
+			ProconClient.Game.SoldierPrePhysicsUpdate += new FrostbiteClient.SoldierPrePhysicsUpdateHandler(m_prcClient_SoldierPrePhysicsUpdate);
+			ProconClient.Game.VehicleDamage += new FrostbiteClient.VehicleDamageHandler(m_prcClient_VehicleDamage);
+			ProconClient.Game.VehicleDestroyed += new FrostbiteClient.VehicleDestroyedHandler(m_prcClient_VehicleDestroyed);
+			ProconClient.Game.VehicleDisabled += new FrostbiteClient.VehicleDisabledHandler(m_prcClient_VehicleDisabled);
+			ProconClient.Game.VehicleEnter += new FrostbiteClient.VehicleEnterHandler(m_prcClient_VehicleEnter);
+			ProconClient.Game.VehicleExit += new FrostbiteClient.VehicleExitHandler(m_prcClient_VehicleExit);
+			ProconClient.Game.VehicleSpawnDone += new FrostbiteClient.VehicleSpawnDoneHandler(m_prcClient_VehicleSpawnDone);
+			ProconClient.Game.VehicleUnspawn += new FrostbiteClient.VehicleUnspawnHandler(m_prcClient_VehicleUnspawn);
+
+			ProconClient.Game.EntityFactoryCreate += new FrostbiteClient.EntityFactoryCreateHandler(m_prcClient_EntityFactoryCreate);
+			ProconClient.Game.EntityFactoryCreateFromBlueprint += new FrostbiteClient.EntityFactoryCreateFromBlueprintHandler(m_prcClient_EntityFactoryCreateFromBlueprint);
+			ProconClient.Game.PlayerFindBestSquad += new FrostbiteClient.PlayerFindBestSquadHandler(m_prcClient_PlayerFindBestSquad);
+			ProconClient.Game.PlayerRequestJoin += new FrostbiteClient.PlayerRequestJoinHandler(m_prcClient_PlayerRequestJoin);
+			ProconClient.Game.PlayerSelectTeam += new FrostbiteClient.PlayerSelectTeamHandler(m_prcClient_PlayerSelectTeam);
+			ProconClient.Game.ServerSuppressEnemies += new FrostbiteClient.ServerSuppressEnemiesHandler(m_prcClient_ServerSuppressEnemies);
+			ProconClient.Game.SoldierDamage += new FrostbiteClient.SoldierDamageHandler(m_prcClient_SoldierDamage);
+			
+			ProconClient.Game.ModListAdd += new FrostbiteClient.ModListAddHandler(Game_ModListAdd);
+			ProconClient.Game.ModListAvailableMods += new FrostbiteClient.ModListAvailableModsHandler(Game_ModListAvailableMods);
+			ProconClient.Game.ModListClear += new FrostbiteClient.ModListClearHandler(Game_ModListClear);
+			ProconClient.Game.ModListDebug += new FrostbiteClient.ModListDebugHandler(Game_ModListDebug);
+			ProconClient.Game.ModListList += new FrostbiteClient.ModListListHandler(Game_ModListList);
+			ProconClient.Game.ModListRemove += new FrostbiteClient.ModListRemoveHandler(Game_ModListRemove);
+			ProconClient.Game.ModListReloadExtensions += new FrostbiteClient.ModListReloadExtensionsHandler(Game_ModListReloadExtensions);
+			ProconClient.Game.ModListSave += new FrostbiteClient.ModListSaveHandler(Game_ModListSave);
+			ProconClient.Game.ModListListRunning += new FrostbiteClient.ModListListRunningHandler(Game_ModListListRunning);
+			ProconClient.Game.PlayerIsDead += new FrostbiteClient.PlayerIsDeadHandler(Game_PlayerIsDead);
+			ProconClient.Game.PlayerIsRevivable += new FrostbiteClient.PlayerIsRevivableHandler(Game_PlayerIsRevivable);
+			
+			ProconClient.Game.UnlockListAdd += new FrostbiteClient.UnlockListAddHandler(Game_UnlockListAdd);
+			ProconClient.Game.UnlockListClear += new FrostbiteClient.UnlockListClearHandler(Game_UnlockListClear);
+			ProconClient.Game.UnlockListList += new FrostbiteClient.UnlockListListHandler(Game_UnlockListList);
+			ProconClient.Game.UnlockListRemove += new FrostbiteClient.UnlockListRemoveHandler(Game_UnlockListRemove);
+			ProconClient.Game.UnlockListSet += new FrostbiteClient.UnlockListSetHandler(Game_UnlockListSet);
+			
+			ProconClient.Game.VuEvent += new FrostbiteClient.VuEventHandler(Game_VuEvent);
+			
+			ProconClient.Game.PlayerGet += new FrostbiteClient.PlayerGetHandler(Game_PlayerGet);
+			
+			ProconClient.Game.ColorCorrectionEnabled += new FrostbiteClient.ColorCorrectionEnabledHandler(Game_ColorCorrectionEnabled);
+			ProconClient.Game.DesertingAllowed += new FrostbiteClient.DesertingAllowedHandler(Game_DesertingAllowed);
+			ProconClient.Game.DestructionEnabled += new FrostbiteClient.DestructionEnabledHandler(Game_DestructionEnabled);
+			ProconClient.Game.FadeInAll += new FrostbiteClient.FadeInAllHandler(Game_FadeInAll);
+			ProconClient.Game.FadeOutAll += new FrostbiteClient.FadeOutAllHandler(Game_FadeOutAll);
+			ProconClient.Game.FrequencyMode += new FrostbiteClient.FrequencyModeHandler(Game_FrequencyMode);
+			ProconClient.Game.HighPerformanceReplication += new FrostbiteClient.HighPerformanceReplicationHandler(Game_HighPerformanceReplication);
+			ProconClient.Game.SetTeamTicketCount += new FrostbiteClient.SetTeamTicketCountHandler(Game_SetTeamTicketCount);
+			ProconClient.Game.ServerBanner += new FrostbiteClient.ServerBannerHandler(Game_ServerBanner);
+			ProconClient.Game.SpectatorCount += new FrostbiteClient.SpectatorCountHandler(Game_SpectatorCount);
+			ProconClient.Game.SquadSize += new FrostbiteClient.SquadSizeHandler(Game_SquadSize);
+			ProconClient.Game.SunFlareEnabled += new FrostbiteClient.SunFlareEnabledHandler(Game_SunFlareEnabled);
+			ProconClient.Game.SuppressionMultiplier += new FrostbiteClient.SuppressionMultiplierHandler(Game_SuppressionMultiplier);
+			ProconClient.Game.TimeScale += new FrostbiteClient.TimeScaleHandler(Game_TimeScale);
+			ProconClient.Game.VehicleDisablingEnabled += new FrostbiteClient.VehicleDisablingEnabledHandler(Game_VehicleDisablingEnabled);
+            #endregion
         }
 
         #endregion
@@ -1804,6 +1993,215 @@ namespace PRoCon.Core.Plugin
             // Obsolete. This was deprecated for BF3, it's now being taken away from BF4.
             // InvokeOnAllEnabled("OnPlayerKilled", new object[] {kKillerVictimDetails.Killer.SoldierName, kKillerVictimDetails.Victim.SoldierName});
         }
+
+        #region Venice Unleashed
+
+		private void m_prcClient_PlayerCoopRevive(FrostbiteClient sender, string strPlayer, string strReviver, bool isAdrenalineRevive)
+        {
+            InvokeOnAllEnabled("OnPlayerCoopRevive", strPlayer, strReviver, isAdrenalineRevive);
+        }
+		private void m_prcClient_CapturePointCaptured(FrostbiteClient sender, string strCaptureFlag, int teamId)
+        {
+            InvokeOnAllEnabled("OnCapturePointCaptured", strCaptureFlag, teamId);
+        }
+		private void m_prcClient_CapturePointLost(FrostbiteClient sender, string strCaptureFlag, int teamId)
+        {
+            InvokeOnAllEnabled("OnCapturePointLost", strCaptureFlag, teamId);
+        }
+		private void m_prcClient_EngineInit(FrostbiteClient sender)
+        {
+            InvokeOnAllEnabled("OnEngineInit");
+        }
+		private void m_prcClient_LevelLoadedVU(FrostbiteClient sender, string strLevelName, string strGameMode, int round, int roundsPerMap)
+        {
+            InvokeOnAllEnabled("OnVeniceLevelLoaded", strLevelName, strGameMode, round, roundsPerMap);
+        }
+		private void m_prcClient_PlayerAuthenticatedVU(FrostbiteClient sender, string strPlayerName, string strGuid, string strAccoutGuid, string strIpAddress)
+        {
+            InvokeOnAllEnabled("OnVenicePlayerAuthenticated", strPlayerName, strGuid, strAccoutGuid, strIpAddress);
+        }
+		private void m_prcClient_PlayerChangingWeapon(FrostbiteClient sender, string strPlayerName, int teamId, string strWeaponName)
+        {
+            InvokeOnAllEnabled("OnPlayerChangingWeapon", strPlayerName, teamId, strWeaponName);
+        }
+		private void m_prcClient_PlayerChatVU(FrostbiteClient sender, string strPlayerName, string strRecipientMask, int teamId, int squadId, string strMessage)
+        {
+            InvokeOnAllEnabled("OnVenicePlayerChat", strPlayerName, strRecipientMask, teamId, squadId, strMessage);
+        }
+		private void m_prcClient_PlayerCreated(FrostbiteClient sender, string strPlayerName)
+        {
+            InvokeOnAllEnabled("OnPlayerCreated", strPlayerName);
+        }
+		private void m_prcClient_PlayerDestroyed(FrostbiteClient sender, string strPlayerName)
+        {
+            InvokeOnAllEnabled("OnPlayerDestroyed", strPlayerName);
+        }
+		private void m_prcClient_PlayerEnteredCapturePoint(FrostbiteClient sender, string strPlayerName, int teamId, string strCapturePoint)
+        {
+            InvokeOnAllEnabled("OnPlayerEnteredCapturePoint", strPlayerName, teamId, strCapturePoint);
+        }
+		private void m_prcClient_PlayerInstantSuicide(FrostbiteClient sender, string strPlayerName, int teamId)
+        {
+            InvokeOnAllEnabled("OnPlayerInstantSuicide", strPlayerName, teamId);
+        }
+		private void m_prcClient_PlayerJoining(FrostbiteClient sender, string strPlayerName, string strPlayerGuid, string strIpAddress, string strAccoutGuid)
+        {
+            InvokeOnAllEnabled("OnPlayerJoining", strPlayerName, strPlayerGuid, strIpAddress, strAccoutGuid);
+        }
+		private void m_prcClient_PlayerKickedFromSquad(FrostbiteClient sender, string strPlayerName, int teamId, int squadId, string strSquadKicker)
+        {
+            InvokeOnAllEnabled("OnPlayerKickedFromSquad", strPlayerName, teamId, squadId, strSquadKicker);
+        }
+		private void m_prcClient_PlayerKilledVU(FrostbiteClient sender, string strPlayerName, string strKiller, float victimPosition_x, float victimPosition_y, float victimPosition_z, string strWeaponName, bool isRoadKill, bool isHeadShot, bool wasVictimInReviveState, float killerPosition_x, float killerPosition_y, float killerPosition_z)
+        {
+            InvokeOnAllEnabled("OnVenicePlayerKilled", strPlayerName, strKiller, victimPosition_x, victimPosition_y, victimPosition_z, strWeaponName, isRoadKill, isHeadShot, wasVictimInReviveState, killerPosition_x, killerPosition_y, killerPosition_z);
+        }
+		private void m_prcClient_PlayerKitPickup(FrostbiteClient sender, string strPlayerName, int teamId, string strPrimaryWeapon, string strOptic, string strPrimaryAccessory, string strSecondaryAccessory, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife)
+        {
+            InvokeOnAllEnabled("OnPlayerKitPickup", strPlayerName, teamId, strPrimaryWeapon, strOptic, strPrimaryAccessory, strSecondaryAccessory, strSecondaryWeapon, strGadget_1, strGadget_2, strGrenade, strKnife);
+        }
+		private void m_prcClient_PlayerLeftVU(FrostbiteClient sender, string strPlayerName, int teamId)
+        {
+            InvokeOnAllEnabled("OnVenicePlayerLeft", strPlayerName, teamId);
+        }
+		private void m_prcClient_PlayerReload(FrostbiteClient sender, string strPlayerName, string strWeaponName, float position_x, float position_y, float position_z)
+        {
+            InvokeOnAllEnabled("OnPlayerReload", strPlayerName, strWeaponName, position_x, position_y, position_z);
+        }
+		private void m_prcClient_PlayerRespawn(FrostbiteClient sender, string strPlayerName, int teamId, string strPrimaryWeapon, string strOptic, string strPrimaryAccessory, string strSecondaryAccessory, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife, string strSpecialization, float position_x, float position_y, float position_z)
+        {
+            InvokeOnAllEnabled("OnPlayerRespawn", strPlayerName, teamId, strPrimaryWeapon, strOptic, strPrimaryAccessory, strSecondaryAccessory, strSecondaryWeapon, strGadget_1, strGadget_2, strGrenade, strKnife, strSpecialization, position_x, position_y, position_z);
+        }
+		private void m_prcClient_PlayerResupply(FrostbiteClient sender, string strPlayerName, int givenMagsCount, string strSupplierName)
+        {
+            InvokeOnAllEnabled("OnPlayerResupply", strPlayerName, givenMagsCount, strSupplierName);
+        }
+		private void m_prcClient_PlayerReviveAccepted(FrostbiteClient sender, string strPlayerName, string strReviverName)
+        {
+            InvokeOnAllEnabled("OnPlayerReviveAccepted", strPlayerName, strReviverName);
+        }
+		private void m_prcClient_PlayerReviveRefused(FrostbiteClient sender, string strPlayerName, int teamId)
+        {
+            InvokeOnAllEnabled("OnPlayerReviveRefused", strPlayerName, teamId);
+        }
+		private void m_prcClient_PlayerSetSquad(FrostbiteClient sender, string strPlayerName, int teamId, int squadId)
+        {
+            InvokeOnAllEnabled("OnPlayerSetSquad", strPlayerName, teamId, squadId);
+        }
+		private void m_prcClient_PlayerSetSquadLeader(FrostbiteClient sender, string strPlayerName, int teamId, int squadId)
+        {
+            InvokeOnAllEnabled("OnPlayerSetSquadLeader", strPlayerName, teamId, squadId);
+        }
+		private void m_prcClient_PlayerSpawnAtVehicle(FrostbiteClient sender, string strPlayerName, string strVehicleName)
+        {
+            InvokeOnAllEnabled("OnPlayerSpawnAtVehicle", strPlayerName, strVehicleName);
+        }
+		private void m_prcClient_PlayerSpawnOnPlayer(FrostbiteClient sender, string strPlayerName, string strPlayerToSpawnOn, int teamId, int squadId)
+        {
+            InvokeOnAllEnabled("OnPlayerSpawnOnPlayer", strPlayerName, strPlayerToSpawnOn, teamId, squadId);
+        }
+		private void m_prcClient_PlayerSpawnOnSelectedSpawnPoint(FrostbiteClient sender, string strPlayerName, int teamId, float position_x, float position_y, float position_z)
+        {
+            InvokeOnAllEnabled("OnPlayerSpawnOnSelectedSpawnPoint", strPlayerName, teamId, position_x, position_y, position_z);
+        }
+		private void m_prcClient_PlayerSquadChangeVU(FrostbiteClient sender, string strPlayerName, int teamId, int squadId)
+        {
+            InvokeOnAllEnabled("OnVenicePlayerSquadChange", strPlayerName, teamId, squadId);
+        }
+		private void m_prcClient_PlayerSuppressedEnemy(FrostbiteClient sender, string strPlayerName, string strEnemyName)
+        {
+            InvokeOnAllEnabled("OnPlayerSuppressedEnemy", strPlayerName, strEnemyName);
+        }
+		private void m_prcClient_PlayerTeamChangeVU(FrostbiteClient sender, string strPlayerName, int teamId, int squadId)
+        {
+            InvokeOnAllEnabled("OnVenicePlayerTeamChange", strPlayerName, teamId, squadId);
+        }
+		private void m_prcClient_PlayerUpdate(FrostbiteClient sender, string strPlayerName, int playerId, int playerOnlineId, string strPlayerGuid, string strAccoutGuid, string strPlayerIp, int ping, bool isAlive, bool isSquadLeader, bool isSquadPrivate, bool hasSoldier, int teamId, int squadId, bool isAllowedToSpawn, int score, int kills, int deaths, string strPrimaryWeapon, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife, float position_x, float position_y, float position_z, float health, bool isDead, float deltaTime)
+        {
+            InvokeOnAllEnabled("OnPlayerUpdate", strPlayerName, playerId, playerOnlineId, strPlayerGuid, strAccoutGuid, strPlayerIp, ping, isAlive, isSquadLeader, isSquadPrivate, hasSoldier, teamId, squadId, isAllowedToSpawn, score, kills, deaths, strPrimaryWeapon, strSecondaryWeapon, strGadget_1, strGadget_2, strGrenade, strKnife, position_x, position_y, position_z, health, isDead, deltaTime);
+        }
+		private void m_prcClient_PlayerUpdateInput(FrostbiteClient sender, string strPlayerName, float deltaTime)
+        {
+            InvokeOnAllEnabled("OnPlayerUpdateInput", strPlayerName, deltaTime);
+        }
+		private void m_prcClient_ServerRoundOverVU(FrostbiteClient sender, float rountTime, int winningTeamId)
+        {
+            InvokeOnAllEnabled("OnVeniceServerRoundOver", rountTime, winningTeamId);
+        }
+		private void m_prcClient_ServerRoundReset(FrostbiteClient sender)
+        {
+            InvokeOnAllEnabled("OnServerRoundReset");
+        }
+		private void m_prcClient_SoldierHealthAction(FrostbiteClient sender, string strPlayerName, int action)
+        {
+            InvokeOnAllEnabled("OnSoldierHealthAction", strPlayerName, action);
+        }
+		private void m_prcClient_SoldierManDown(FrostbiteClient sender, string strSoldierName, string strInflictorName)
+        {
+            InvokeOnAllEnabled("OnSoldierManDown", strSoldierName, strInflictorName);
+        }
+		private void m_prcClient_SoldierPrePhysicsUpdate(FrostbiteClient sender, string strPlayerName, float deltaTime)
+        {
+            InvokeOnAllEnabled("OnSoldierPrePhysicsUpdate", strPlayerName, deltaTime);
+        }
+		private void m_prcClient_VehicleDamage(FrostbiteClient sender, string strVehicleName, double damage, string strDamageGiver)
+        {
+            InvokeOnAllEnabled("OnVehicleDamage", strVehicleName, damage, strDamageGiver);
+        }
+		private void m_prcClient_VehicleDestroyed(FrostbiteClient sender, string strVehicleName, int points, int teamId)
+        {
+            InvokeOnAllEnabled("OnVehicleDestroyed", strVehicleName, points, teamId);
+        }
+		private void m_prcClient_VehicleDisabled(FrostbiteClient sender, string strVehicleName)
+        {
+            InvokeOnAllEnabled("OnVehicleDisabled", strVehicleName);
+        }
+		private void m_prcClient_VehicleEnter(FrostbiteClient sender, string strVehicleName, string strPlayerName, int teamId)
+        {
+            InvokeOnAllEnabled("OnVehicleEnter", strVehicleName, strPlayerName, teamId);
+        }
+		private void m_prcClient_VehicleExit(FrostbiteClient sender, string strVehicleName, string strPlayerName)
+        {
+            InvokeOnAllEnabled("OnVehicleExit", strVehicleName, strPlayerName);
+        }
+		private void m_prcClient_VehicleSpawnDone(FrostbiteClient sender, string strVehicleName)
+        {
+            InvokeOnAllEnabled("OnVehicleSpawnDone", strVehicleName);
+        }
+		private void m_prcClient_VehicleUnspawn(FrostbiteClient sender, string strVehicleName)
+        {
+            InvokeOnAllEnabled("OnVehicleUnspawn", strVehicleName);
+        }
+		private void m_prcClient_EntityFactoryCreate(FrostbiteClient sender)
+        {
+            InvokeOnAllEnabled("OnEntityFactoryCreate");
+        }
+		private void m_prcClient_EntityFactoryCreateFromBlueprint(FrostbiteClient sender)
+        {
+            InvokeOnAllEnabled("OnEntityFactoryCreateFromBlueprint");
+        }
+		private void m_prcClient_PlayerFindBestSquad(FrostbiteClient sender, string strPlayerName)
+        {
+            InvokeOnAllEnabled("OnPlayerFindBestSquad", strPlayerName);
+        }
+		private void m_prcClient_PlayerRequestJoin(FrostbiteClient sender, string strJoinMode, string strAccoutGuid, string strPlayerGuid, string strPlayerName)
+        {
+            InvokeOnAllEnabled("OnPlayerRequestJoin", strJoinMode, strAccoutGuid, strPlayerGuid, strPlayerName);
+        }
+		private void m_prcClient_PlayerSelectTeam(FrostbiteClient sender, string strPlayerName, int teamId)
+        {
+            InvokeOnAllEnabled("OnPlayerSelectTeam", strPlayerName, teamId);
+        }
+		private void m_prcClient_ServerSuppressEnemies(FrostbiteClient sender, float suppressModifier)
+        {
+            InvokeOnAllEnabled("OnServerSuppressEnemies", suppressModifier);
+        }
+		private void m_prcClient_SoldierDamage(FrostbiteClient sender, string strPlayerName, float damage, string strInflictorName, string strInflictorWeapon)
+        {
+            InvokeOnAllEnabled("OnSoldierDamage", strPlayerName, damage, strInflictorName, strInflictorWeapon);
+        }
+		
+        #endregion
 
         /// <summary>
         ///     This will check from the dictionary of registered commands to see if some text is matched
@@ -2556,6 +2954,143 @@ namespace PRoCon.Core.Plugin
         }
 
         #endregion
+		
+		#region Venice Unleashed
+		
+		private void Game_ModListAdd(FrostbiteClient sender, string strModName)
+        {
+            InvokeOnAllEnabled("OnModListAdd", strModName);
+        }
+		private void Game_ModListAvailableMods(FrostbiteClient sender, List<string> lstAvailableMods)
+        {
+            InvokeOnAllEnabled("OnModListAvailableMods", lstAvailableMods);
+        }
+		private void Game_ModListClear(FrostbiteClient sender)
+        {
+            InvokeOnAllEnabled("OnModListClear");
+        }
+		private void Game_ModListDebug(FrostbiteClient sender, bool enabled)
+        {
+            InvokeOnAllEnabled("OnModListDebug", enabled);
+        }
+		private void Game_ModListList(FrostbiteClient sender, List<string> lstModlist)
+        {
+            InvokeOnAllEnabled("OnModListList", lstModlist);
+        }
+		private void Game_ModListReloadExtensions(FrostbiteClient sender)
+        {
+            InvokeOnAllEnabled("OnModListReloadExtensions");
+        }
+		private void Game_ModListRemove(FrostbiteClient sender, string strModName)
+        {
+            InvokeOnAllEnabled("OnModListRemove", strModName);
+        }
+		private void Game_ModListSave(FrostbiteClient sender)
+        {
+            InvokeOnAllEnabled("OnModListSave");
+        }
+		private void Game_ModListListRunning(FrostbiteClient sender, List<string> lstModlistRunning)
+        {
+            InvokeOnAllEnabled("OnModListListRunning", lstModlistRunning);
+        }
+		private void Game_PlayerIsDead(FrostbiteClient sender, string soldierName, bool isDead)
+        {
+            InvokeOnAllEnabled("OnPlayerIsDead", soldierName, isDead);
+        }
+		private void Game_PlayerIsRevivable(FrostbiteClient sender, string soldierName, bool isRevivable)
+        {
+            InvokeOnAllEnabled("OnPlayerIsRevivable", soldierName, isRevivable);
+        }
+		private void Game_UnlockListAdd(FrostbiteClient sender, string strUnlockListAdd)
+        {
+            InvokeOnAllEnabled("OnUnlockListAdd", strUnlockListAdd);
+        }
+		private void Game_UnlockListClear(FrostbiteClient sender)
+        {
+            InvokeOnAllEnabled("OnUnlockListClear");
+        }
+		private void Game_UnlockListList(FrostbiteClient sender, List<string> lstUnlocklist)
+        {
+            InvokeOnAllEnabled("OnUnlockListList", lstUnlocklist);
+        }
+		private void Game_UnlockListRemove(FrostbiteClient sender, string strUnlockListRemove)
+        {
+            InvokeOnAllEnabled("OnUnlockListRemove", strUnlockListRemove);
+        }
+		private void Game_UnlockListSet(FrostbiteClient sender, List<string> lstUnlocklistSet)
+        {
+            InvokeOnAllEnabled("OnUnlockListSet", lstUnlocklistSet);
+        }
+		private void Game_VuEvent(FrostbiteClient sender, string strEventName, bool enabled)
+        {
+            InvokeOnAllEnabled("OnVuEvent", strEventName, enabled);
+        }
+		private void Game_PlayerGet(FrostbiteClient sender, string strPlayerName, int playerId, int playerOnlineId, string strPlayerGuid, string strAccoutGuid, string strPlayerIp, int ping, bool isAlive, bool isSquadLeader, bool isSquadPrivate, bool hasSoldier, int teamId, int squadId, bool isAllowedToSpawn, int score, int kills, int deaths, string strPrimaryWeapon, string strOptic, string strPrimaryAccessory, string strSecondaryAccessory, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife, string strSpecialization, float position_x, float position_y, float position_z, float health, bool isDead)
+		{
+            InvokeOnAllEnabled("OnPlayerGet", strPlayerName, playerId, playerOnlineId, strPlayerGuid, strAccoutGuid, strPlayerIp, ping, isAlive, isSquadLeader, isSquadPrivate, hasSoldier, teamId, squadId, isAllowedToSpawn, score, kills, deaths, strPrimaryWeapon, strOptic, strPrimaryAccessory, strSecondaryAccessory, strSecondaryWeapon, strGadget_1, strGadget_2, strGrenade, strKnife, strSpecialization, position_x, position_y, position_z, health, isDead);
+        }
+		private void Game_ColorCorrectionEnabled(FrostbiteClient sender, bool enabled)
+        {
+            InvokeOnAllEnabled("OnColorCorrectionEnabled", enabled);
+        }
+		private void Game_DesertingAllowed(FrostbiteClient sender, bool allowed)
+        {
+            InvokeOnAllEnabled("OnDesertingAllowed", allowed);
+        }
+		private void Game_DestructionEnabled(FrostbiteClient sender, bool enabled)
+        {
+            InvokeOnAllEnabled("OnDestructionEnabled", enabled);
+        }
+		private void Game_FadeInAll(FrostbiteClient sender)
+        {
+            InvokeOnAllEnabled("OnFadeInAll");
+        }
+		private void Game_FadeOutAll(FrostbiteClient sender)
+        {
+            InvokeOnAllEnabled("OnFadeOutAll");
+        }
+		private void Game_FrequencyMode(FrostbiteClient sender, string strFrequencyMode)
+        {
+            InvokeOnAllEnabled("OnFrequencyMode", strFrequencyMode);
+        }
+		private void Game_HighPerformanceReplication(FrostbiteClient sender, bool enabled)
+        {
+            InvokeOnAllEnabled("OnHighPerformanceReplication", enabled);
+        }
+		private void Game_SetTeamTicketCount(FrostbiteClient sender, int teamId, int ticketCount)
+        {
+            InvokeOnAllEnabled("OnSetTeamTicketCount", teamId, ticketCount);
+        }
+		private void Game_ServerBanner(FrostbiteClient sender, string strServerBanner)
+        {
+            InvokeOnAllEnabled("OnServerBanner", strServerBanner);
+        }
+		private void Game_SpectatorCount(FrostbiteClient sender, int spectatorCount)
+        {
+            InvokeOnAllEnabled("OnSpectatorCount", spectatorCount);
+        }
+		private void Game_SquadSize(FrostbiteClient sender, int squadSize)
+        {
+            InvokeOnAllEnabled("OnSquadSize", squadSize);
+        }
+		private void Game_SunFlareEnabled(FrostbiteClient sender, bool enabled)
+        {
+            InvokeOnAllEnabled("OnSunFlareEnabled", enabled);
+        }
+		private void Game_SuppressionMultiplier(FrostbiteClient sender, int suppressionMultiplier)
+        {
+            InvokeOnAllEnabled("OnSuppressionMultiplier", suppressionMultiplier);
+        }
+		private void Game_TimeScale(FrostbiteClient sender, float timeScale)
+        {
+            InvokeOnAllEnabled("OnTimeScale", timeScale);
+        }
+		private void Game_VehicleDisablingEnabled(FrostbiteClient sender, bool enabled)
+        {
+            InvokeOnAllEnabled("OnVehicleDisablingEnabled", enabled);
+        }
+		
+		#endregion
 
         #region MoHW vars setting events
 

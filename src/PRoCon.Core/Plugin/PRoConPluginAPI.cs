@@ -1,7 +1,7 @@
-﻿/*  Copyright 2010 Geoffrey 'Phogue' Green
+/*  Copyright 2010 Geoffrey 'Phogue' Green
 
     http://www.phogue.net
- 
+
     This file is part of PRoCon Frostbite.
 
     PRoCon Frostbite is free software: you can redistribute it and/or modify
@@ -140,7 +140,7 @@ namespace PRoCon.Core.Plugin
 
         /// <summary>
         /// Called when procon recieves "OK" from admin.endRound X
-        /// 
+        ///
         /// See OnRoundOver(int iWinningTeamID) for the event sent by the server.
         /// </summary>
         /// <param name="iWinningTeamID"></param>
@@ -439,6 +439,102 @@ namespace PRoCon.Core.Plugin
 
         #endregion
 
+        #region Venice Unleashed
+
+        public virtual void OnPlayerCoopRevive(string soldierName, string reviverName, bool isAdrenalineRevive) { }
+		public virtual void OnCapturePointCaptured(string strCaptureFlag, int teamId) { }
+		public virtual void OnCapturePointLost(string strCaptureFlag, int teamId) { }
+		public virtual void OnEngineInit() { }
+		public virtual void OnVeniceLevelLoaded(string strLevelName, string strGameMode, int round, int roundsPerMap) { }
+		public virtual void OnVenicePlayerAuthenticated(string strPlayerName, string strGuid, string strAccoutGuid, string strIpAddress) { }
+		public virtual void OnPlayerChangingWeapon(string strPlayerName, int teamId, string strWeaponName) { }
+		public virtual void OnVenicePlayerChat(string strPlayerName, string strRecipientMask, int teamId, int squadId, string strMessage) { }
+		public virtual void OnPlayerCreated(string strPlayerName) { }
+		public virtual void OnPlayerDestroyed(string strPlayerName) { }
+		public virtual void OnPlayerEnteredCapturePoint(string strPlayerName, int teamId, string strCapturePoint) { }
+		public virtual void OnPlayerInstantSuicide(string strPlayerName, int teamId) { }
+		public virtual void OnPlayerJoining(string strPlayerName, string strPlayerGuid, string strIpAddress, string strAccoutGuid) { }
+		public virtual void OnPlayerKickedFromSquad(string strPlayerName, int teamId, int squadId, string strSquadKicker) { }
+		public virtual void OnVenicePlayerKilled(string strPlayerName, string strKiller, float victimPosition_x, float victimPosition_y, float victimPosition_z, string strWeaponName, bool isRoadKill, bool isHeadShot, bool wasVictimInReviveState, float killerPosition_x, float killerPosition_y, float killerPosition_z) { }
+		public virtual void OnPlayerKitPickup(string strPlayerName, int teamId, string strPrimaryWeapon, string strOptic, string strPrimaryAccessory, string strSecondaryAccessory, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife) { }
+		public virtual void OnVenicePlayerLeft(string strPlayerName, int teamId) { }
+		public virtual void OnPlayerReload(string strPlayerName, string strWeaponName, float position_x, float position_y, float position_z) { }
+		public virtual void OnPlayerRespawn(string strPlayerName, int teamId, string strPrimaryWeapon, string strOptic, string strPrimaryAccessory, string strSecondaryAccessory, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife, string strSpecialization, float position_x, float position_y, float position_z) { }
+		public virtual void OnPlayerResupply(string strPlayerName, int givenMagsCount, string strSupplierName) { }
+		public virtual void OnPlayerReviveAccepted(string strPlayerName, string strReviverName) { }
+		public virtual void OnPlayerReviveRefused(string strPlayerName, int teamId) { }
+		public virtual void OnPlayerSetSquad(string strPlayerName, int teamId, int squadId) { }
+		public virtual void OnPlayerSetSquadLeader(string strPlayerName, int teamId, int squadId) { }
+		public virtual void OnPlayerSpawnAtVehicle(string strPlayerName, string strVehicleName) { }
+		public virtual void OnPlayerSpawnOnPlayer(string strPlayerName, string strPlayerToSpawnOn, int teamId, int squadId) { }
+		public virtual void OnPlayerSpawnOnSelectedSpawnPoint(string strPlayerName, int teamId, float position_x, float position_y, float position_z) { }
+		public virtual void OnVenicePlayerSquadChange(string strPlayerName, int teamId, int squadId) { }
+		public virtual void OnPlayerSuppressedEnemy(string strPlayerName, string strEnemyName) { }
+		public virtual void OnVenicePlayerTeamChange(string strPlayerName, int teamId, int squadId) { }
+		public virtual void OnPlayerUpdate(string strPlayerName, int playerId, int playerOnlineId, string strPlayerGuid, string strAccoutGuid, string strPlayerIp, int ping, bool isAlive, bool isSquadLeader, bool isSquadPrivate, bool hasSoldier, int teamId, int squadId, bool isAllowedToSpawn, int score, int kills, int deaths, string strPrimaryWeapon, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife, float position_x, float position_y, float position_z, float health, bool isDead, float deltaTime) { }
+		public virtual void OnPlayerUpdateInput(string strPlayerName, float deltaTime) { }
+		public virtual void OnVeniceServerRoundOver(float rountTime, int winningTeamId) { }
+		public virtual void OnServerRoundReset() { }
+		public virtual void OnSoldierHealthAction(string strPlayerName, int action) { }
+		public virtual void OnSoldierManDown(string strSoldierName, string strInflictorName) { }
+		public virtual void OnSoldierPrePhysicsUpdate(string strPlayerName, float deltaTime) { }
+		public virtual void OnVehicleDamage(string strVehicleName, double damage, string strDamageGiver) { }
+		public virtual void OnVehicleDestroyed(string strVehicleName, int points, int teamId) { }
+		public virtual void OnVehicleDisabled(string strVehicleName) { }
+		public virtual void OnVehicleEnter(string strVehicleName, string strPlayerName, int teamId) { }
+		public virtual void OnVehicleExit(string strVehicleName, string strPlayerName) { }
+		public virtual void OnVehicleSpawnDone(string strVehicleName) { }
+		public virtual void OnVehicleUnspawn(string strVehicleName) { }
+		
+		public virtual void OnEntityFactoryCreate() { }
+		public virtual void OnEntityFactoryCreateFromBlueprint() { }
+		public virtual void OnPlayerFindBestSquad(string strPlayerName) { }
+		public virtual void OnPlayerRequestJoin(string strJoinMode, string strAccoutGuid, string strPlayerGuid, string strPlayerName) { }
+		public virtual void OnPlayerSelectTeam(string strPlayerName, int teamId) { }
+		public virtual void OnServerSuppressEnemies(float suppressModifier) { }
+		public virtual void OnSoldierDamage(string strPlayerName, float damage, string strInflictorName, string strInflictorWeapon) { }
+		
+		public virtual void OnPlayerIsDead(string soldierName, bool isDead) { }
+		public virtual void OnPlayerIsRevivable(string soldierName, bool isRevivable) { }
+		
+		public virtual void OnUnlockListAdd(string strUnlockListAdd) { }
+		public virtual void OnUnlockListClear() { }
+		public virtual void OnUnlockListList(List<string> lstUnlocklist) { }
+		public virtual void OnUnlockListRemove(string strUnlockListRemove) { }
+		public virtual void OnUnlockListSet(List<string> lstUnlocklistSet) { }
+		
+		public virtual void OnVuEvent(string strEventName, bool enabled) { }
+		
+		public virtual void OnPlayerGet(string strPlayerName, int playerId, int playerOnlineId, string strPlayerGuid, string strAccoutGuid, string strPlayerIp, int ping, bool isAlive, bool isSquadLeader, bool isSquadPrivate, bool hasSoldier, int teamId, int squadId, bool isAllowedToSpawn, int score, int kills, int deaths, string strPrimaryWeapon, string strOptic, string strPrimaryAccessory, string strSecondaryAccessory, string strSecondaryWeapon, string strGadget_1, string strGadget_2, string strGrenade, string strKnife, string strSpecialization, float position_x, float position_y, float position_z, float health, bool isDead) { }
+		
+		public virtual void OnModListAdd(string strModName) { }
+		public virtual void OnModListAvailableMods(List<string> lstAvailableMods) { }
+		public virtual void OnModListClear() { }
+		public virtual void OnModListDebug(bool enabled) { }
+		public virtual void OnModListList(List<string> lstMods) { }
+		public virtual void OnModListReloadExtensions() { }
+		public virtual void OnModListRemove(string strModName) { }
+		public virtual void OnModListSave() { }
+		public virtual void OnModListListRunning(List<string> lstModsRunning) { }
+		
+		public virtual void OnColorCorrectionEnabled(bool enabled) { }
+		public virtual void OnDesertingAllowed(bool allowed) { }
+		public virtual void OnDestructionEnabled(bool enabled) { }
+		public virtual void OnFadeInAll() { }
+		public virtual void OnFadeOutAll() { }
+		public virtual void OnFrequencyMode(string strFrequencyMode) { }
+		public virtual void OnHighPerformanceReplication(bool enabled) { }
+		public virtual void OnSetTeamTicketCount(int teamId, int ticketCount) { }
+		public virtual void OnServerBanner(string strServerBanner) { }
+		public virtual void OnSpectatorCount(int spectatorCount) { }
+		public virtual void OnSquadSize(int squadSize) { }
+		public virtual void OnSunFlareEnabled(bool enabled) { }
+		public virtual void OnSuppressionMultiplier(int suppressionMultiplier) { }
+		public virtual void OnTimeScale(float timeScale) { }
+		public virtual void OnVehicleDisablingEnabled(bool enabled) { }
+		
+        #endregion
+
         #region Chat
 
         public virtual void OnGlobalChat(string speaker, string message) { }
@@ -501,7 +597,7 @@ namespace PRoCon.Core.Plugin
         public virtual void OnPunkbusterEndPlayerInfo() { }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="playerInfo"></param>
         public virtual void OnPunkbusterPlayerInfo(CPunkbusterInfo playerInfo)
@@ -542,7 +638,7 @@ namespace PRoCon.Core.Plugin
         /// <summary>
         /// Fires when any registered command has been matched against a players text in game.
         /// This method is called regardless of it being registered to your classname.
-        /// Called *after* a confirmation.  If this method is called you can assume the 
+        /// Called *after* a confirmation.  If this method is called you can assume the
         /// speaker has met the required privliege and has confirmed the command as correct.
         /// </summary>
         /// <param name="speaker">The player that issued the command</param>
