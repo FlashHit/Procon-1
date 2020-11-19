@@ -325,7 +325,7 @@ namespace PRoCon.Controls
                     this.OnSpectatorSlotsList(this.m_prcClient.Game, new List<string>(this.m_prcClient.SpectatorList));
                 }
 
-                 if (sender.Game is BFHLClient || sender.Game is BF4Client || sender.Game is MOHWClient) //|| sender.Game is BF3Client  -- changed for VU
+                if (sender.Game is BFHLClient || sender.Game is BF4Client || sender.Game is MOHWClient) //|| sender.Game is BF3Client  -- changed for VU
                 {
                     this.tbcLists.TabPages.Remove(this.tabTextChatModeration);
                 }
